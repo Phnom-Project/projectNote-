@@ -5,4 +5,6 @@
 
 <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="" />
 <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="" />
+
+<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="">....</PackageReference>
 ```
