@@ -8,3 +8,8 @@
 
 <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="">....</PackageReference>
 ```
+#### `visual studio` migration
+```
+Add-Migration InitialCreate
+Update-Database
+```
