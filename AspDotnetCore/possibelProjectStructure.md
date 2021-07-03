@@ -1,10 +1,10 @@
     -Areas
       -Todos
         -pages
-        index.cshtml  ()
+        index.cshtml  **(https://localhost:5001/todos)
         -work
-          -Acount
-            -login.cshtml **(add @page)**
+          -Account
+            -login.cshtml **(add @page)(https://localhost:5001/todos/work/account/login)
     -Pages
     -Models
     -Data
