@@ -1,4 +1,5 @@
 #### for this we use `postgresql DB` also we must to add this nuget package
+- [x] <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="" />
 ```
 - [x] <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="" />
 <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="" />
@@ -21,4 +22,3 @@ services.AddDbContext<ApplicationDbContext>(options =>
 Add-Migration InitialCreate
 Update-Database
 ```
-            - [x] <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="" />
