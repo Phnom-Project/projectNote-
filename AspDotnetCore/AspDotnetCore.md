@@ -19,3 +19,5 @@ services.AddDbContext<ApplicationDbContext>(options =>
 Add-Migration InitialCreate
 Update-Database
 ```
+> revert database
+`Update-Database nameOfwhereYouWantToApply`
