@@ -1,5 +1,7 @@
 #### for this we use `postgresql DB` also we must to add this nuget package
 - [x] PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version=""
+- [ ] PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version=""
+- [x\] PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version=""
 ```
 - [x] <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="" />
 <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="" />
