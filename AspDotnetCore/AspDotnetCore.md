@@ -16,8 +16,9 @@ services.AddDbContext<ApplicationDbContext>(options =>
 ```
 #### `visual studio` migration
 ```
+Get-migration
 Add-Migration InitialCreate
 Update-Database
 ```
 > revert database
-`Update-Database nameOfwhereYouWantToApply`
+`Update-Database $nameOfMigrationYouWantToApply`
