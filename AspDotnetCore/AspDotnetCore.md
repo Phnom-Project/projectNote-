@@ -5,6 +5,11 @@
 
 <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="">....</PackageReference>
 ```
+> startup.cs
+```
+services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseNpgsql(Configuration.GetConnectionString("Postgresql")));
+```
 #### `visual studio` migration
 ```
 Add-Migration InitialCreate
