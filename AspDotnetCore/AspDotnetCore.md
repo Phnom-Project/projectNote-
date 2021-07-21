@@ -21,3 +21,4 @@ services.AddDbContext<ApplicationDbContext>(options =>
 Add-Migration InitialCreate
 Update-Database
 ```
+            <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="" />
