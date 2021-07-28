@@ -15,10 +15,11 @@ services.AddDbContext<ApplicationDbContext>(options =>
   },
 ```
 #### `visual studio` migration
-```
+```powershell
 Get-migration
 Add-Migration InitialCreate
 Update-Database
 ```
+> for specific context `add-migration initialProduct -Context ProductDbContext`
 > revert database
 `Update-Database $nameOfMigrationYouWantToApply`
