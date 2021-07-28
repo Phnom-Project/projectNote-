@@ -4,10 +4,10 @@
       - index.cshtml  `(https://localhost:5001/todos)`
       - work
         - Account
-          - login.cshtml `(add @page)(https://localhost:5001/todos/work/account/login)`
--Pages
--Models
--Data
+          - login.cshtml `(add @page)(https://localhost:5001/todos/work/account/login) or (add @page "123")(https://localhost:5001/123)`
+- Pages
+- Models
+- Data
 
 <details>
   <summary>sample</summary>
