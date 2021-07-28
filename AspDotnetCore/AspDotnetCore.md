@@ -4,12 +4,12 @@
 - [ ] PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version=""
 
 > startup.cs > ConfigureServices(IServiceCollection services)
-```
+```c#
 services.AddDbContext<ApplicationDbContext>(options =>
             options.UseNpgsql(Configuration.GetConnectionString("Postgresql")));
 ```
 > appsetting.json
-```
+```json
 "ConnectionStrings": {
     "Postgresql": "User ID=postgres;Password=@dmin123;Host=127.0.0.1;Port=5432;Database=identity;Pooling=true;Connection Lifetime=0;"
   },
