@@ -1,4 +1,4 @@
-#### for this we use `postgresql DB` also we must to add this nuget package
+#### for this we use `postgresql DB` also we must to add this nuget package (should delete existing **migration**)
 - [x] PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version=""
 - [x] PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version=""
 - [ ] PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version=""
