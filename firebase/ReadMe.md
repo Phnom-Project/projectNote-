@@ -20,9 +20,9 @@ firebase init
   "hosting": {
     "site": "webassemblytesthome",
     "public": "publish/wwwrooot",
-    ...
   }
 }
 ```
 > and 
-```firebase deploy --only hosting:webassemblytesthome```
+```shell
+firebase deploy --only hosting:webassemblytesthome```
