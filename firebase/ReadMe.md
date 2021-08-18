@@ -1,14 +1,14 @@
-##### preview `(public => publish/wwwroot)`
+#### Preview `(public => publish/wwwroot)`
 ```shell
 firebase init 
 firebase emulators:start (optional)
 firebase hosting:channel:deploy CHANNEL_ID
 ```
-##### deploy
+#### Deploy
 ```shell
 firebase deploy
 ```
-##### for specific another site subdomain
+#### For specific another site subdomain
 ```
 npm install -g firebase-tools
 firebase login
