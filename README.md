@@ -3,7 +3,7 @@
 ### Hot Reload
 > launchSetting.json
 ```json
-"hotReloadProfile": "aspnetcore"
+"hotReloadProfile": "blazorwasm"
 ```
 >cmd
 ```
