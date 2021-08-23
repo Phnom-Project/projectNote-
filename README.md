@@ -5,6 +5,6 @@
 ```json
 "hotReloadProfile": "blazorwasm"
 ```
->cmd
+>cmd `dont forget save all ctl+shift+s`
 ```
 dotnet watch run
