@@ -1,4 +1,5 @@
-### Separate large html file `http://127.0.0.1:5500/index.html`
+### Separate large html file 
+- note work only server host`http://127.0.0.1:5500/index.html`
 > index.html
 ```html
 <!DOCTYPE html>
