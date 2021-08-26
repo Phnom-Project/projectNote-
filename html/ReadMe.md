@@ -1,5 +1,12 @@
 ### Separate large html file 
 - note work only server host`http://127.0.0.1:5500/index.html`
+> main.js
+```js
+$(function(){
+    $("#div-1").load("div-1.html");
+    $("#div-2").load("div-2.html"); 
+  });
+```
 > index.html
 ```html
 <!DOCTYPE html>
