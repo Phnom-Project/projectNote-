@@ -5,9 +5,10 @@ private string[] files = Directory.GetDirectories(Directory.GetCurrentDirectory(
 ```
 ### download file
 ```c#
+string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "/good.txt"
 private static readonly HttpClient _httpClient = new HttpClient();
 byte[] fileBytes = await _httpClient.GetByteArrayAsync(uri);
-File.WriteAllBytes("path", fileBytes);
+File.WriteAllBytes(path, fileBytes);
 ```
 ### write ,read file 
 ```c#
