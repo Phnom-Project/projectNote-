@@ -1,4 +1,5 @@
-## Rollup ### format: 'iife',name: 'vayso'
+## Rollup js
+> format: 'iife',name: 'vayso'
 > <script type="text/javascript" src="g.js"></script>
 > vayso.good(), vayso.sayHello('home')
 ```js
