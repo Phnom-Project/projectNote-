@@ -1,5 +1,10 @@
 # projectNote-
 - `$` = sign of customize name of user 
+### Load file locally
+> locally
+- file:///D:/Download/
+> server
+- https://github.com/
 ### Hot Reload (blazor)
 > launchSetting.json
 ```json
