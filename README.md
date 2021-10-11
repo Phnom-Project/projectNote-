@@ -1,5 +1,12 @@
 # projectNote-
 - `$` = sign of customize name of user 
+### Clear cache(blazor pwa)
+> service-worker.published.js
+```js
+const CACHE_VERSION = 1.0;
+//add code below for new version
+const CACHE_VERSION = 1.1;
+```
 ### Load file locally
 > locally
 - file:///D:/Download/
