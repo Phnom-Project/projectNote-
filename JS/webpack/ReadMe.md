@@ -1,5 +1,5 @@
 ### configuration
-> webpack.config.js
+> webpack.config.js(https://webpack.js.org/configuration/output/)
 ```js
 const path = require('path');
 
