@@ -16,3 +16,9 @@ print(any(c in y for c in z[0])) # return True
 ```py
 docs = [nlp(text) for text in LOTS_OF_TEXTS]
 ```
+### uvicorn and venv(virtual enviroment)
+```shell
+py -m venv [nameEnviroment]
+pip install [packageName]
+pip freeze > requirements.txt
+```
