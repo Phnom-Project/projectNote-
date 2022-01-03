@@ -18,7 +18,7 @@ docs = [nlp(text) for text in LOTS_OF_TEXTS]
 ```
 ### uvicorn and venv(virtual enviroment)
 ```shell
-py -m venv [nameEnviroment]
+py -m venv venv
 pip install [packageName]
 pip freeze > requirements.txt
 ```
