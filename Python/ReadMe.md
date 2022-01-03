@@ -21,4 +21,5 @@ docs = [nlp(text) for text in LOTS_OF_TEXTS]
 py -m venv venv
 pip install [packageName]
 pip freeze > requirements.txt
+pip install -r requirements.txt
 ```
