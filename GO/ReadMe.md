@@ -19,6 +19,21 @@ RUN go get github.com/githubnemo/CompileDaemon
 EXPOSE 8000
 ENTRYPOINT CompileDaemon --build="go build main.go" --command=./main
 ```
+> go-sqlite3
+```dockerfile
+FROM golang:alpine
+RUN apk add build-base
+RUN mkdir /app
+WORKDIR /app
+ADD go.mod .
+ADD go.sum .
+RUN go mod download
+ADD add.go .
+# RUN go get github.com/githubnemo/CompileDaemon
+# EXPOSE 8000
+# ENTRYPOINT CompileDaemon --build="go build add.go" --command=./add
+RUN  go build add.go
+```
 ### import local package "hello"
 ```go
 package main
