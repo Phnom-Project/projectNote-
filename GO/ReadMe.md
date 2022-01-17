@@ -32,7 +32,7 @@ ADD add.go .
 # RUN go get github.com/githubnemo/CompileDaemon
 # EXPOSE 8000
 # ENTRYPOINT CompileDaemon --build="go build add.go" --command=./add
-RUN  go build add.go
+RUN  go build add.go # maybe spend alot time please find new solution
 ```
 ### import local package "hello"
 ```go
