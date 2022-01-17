@@ -28,3 +28,7 @@ http://localhost:5000
 ./gradlew build
 gradlew.bat build
 ```
+### docker
+```shell
+docker build .
+```
