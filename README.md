@@ -30,5 +30,5 @@ gradlew.bat build
 ```
 ### docker
 ```shell
-docker build .
+docker build -t [name] .
 ```
