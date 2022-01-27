@@ -1,8 +1,8 @@
 ### Restapi
 ```js
-//app.post('/webhook', (req, res) => {
-//let body = req.body;
-//console.log(body);
+// app.post('/webhook', (req, res) => {
+//    let body = req.body;
+//    console.log(body);
 {
    object: 'page',
    entry: [
@@ -11,8 +11,8 @@
  }
 
 // body.entry.forEach(function(entry) {
-// let webhookEvent = entry.messaging[0];
-// console.log(webhookEvent);
+//    let webhookEvent = entry.messaging[0];
+//    console.log(webhookEvent);
  {
    sender: { id: '5031209136912719' },
    recipient: { id: '100650141889360' },
@@ -24,11 +24,11 @@
    }
  }
  
- //let senderPsid = webhookEvent.sender.id;
- //console.log('Sender PSID: ' + senderPsid);
+ //   let senderPsid = webhookEvent.sender.id;
+ //   console.log('Sender PSID: ' + senderPsid);
  Sender PSID: 5031209136912719
 
-//console.log(webhookEvent.message.nlp.entities);
+//    console.log(webhookEvent.message.nlp.entities);
  {
    intent: [ { confidence: 0.97514204549621, value: 'ask_location' } ],
    location: [ { confidence: 1, value: 'ទីតាំង', type: 'value' } ]
