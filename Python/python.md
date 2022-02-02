@@ -1,6 +1,6 @@
 #### file i/o
 > write
-> object -> dict    array -> list
+- > object -> dict    array -> list
 ```py
 data = {
     "president": {
