@@ -16,3 +16,8 @@ with open("data_file.json", "w") as write_file:
 with open("data_file.json", "r") as read_file:
     data = json.load(read_file)
 ```
+#### import json
+- dump**s**()	encoding to JSON objects
+- dump()	encoded string writing on file
+- load**s**()	Decode the JSON string
+- load()	Decode while JSON file read
