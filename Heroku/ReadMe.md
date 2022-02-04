@@ -10,6 +10,7 @@ git push heroku master
 ### Docker
 ```shell
 heroku container:login
+[git clone https://github.com/heroku/alpinehelloworld.git]
 heroku create // OR clone existing project first
 heroku container:push web   //Build the image and push to Container Registry
 heroku container:release web    //Then release the image to your app:
