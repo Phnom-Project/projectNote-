@@ -21,3 +21,9 @@ with open("data_file.json", "r") as read_file:
 - dump()	encoded string writing on file
 - load**s**()	Decode the JSON string
 - load()	Decode while JSON file read
+#### import Another file
+```
+from [fileName] import [def_Name] as xx
+from [folderName].[fileName] import [def_Name] as xx
+import [folderName].[fileName] as x1
+```
