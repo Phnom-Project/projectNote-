@@ -22,7 +22,7 @@ with open("data_file.json", "r") as read_file:
 - load**s**()	Decode the JSON string
 - load()	Decode while JSON file read
 #### import Another file
-```
+```py
 from [fileName] import [def_Name] as xx
 from [folderName].[fileName] import [def_Name] as xx
 import [folderName].[fileName] as x1
