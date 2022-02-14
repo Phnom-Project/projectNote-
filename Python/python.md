@@ -1,7 +1,8 @@
-#### file i/o
+#### file i/o 
 > write
 - > object -> dict    array -> list
 ```py
+//cd app and then run main.py
 data = {
     "president": {
         "name": "Zaphod Beeblebrox",
@@ -13,6 +14,7 @@ with open("data_file.json", "w") as write_file:
 ```
 > read
 ```py
+cd app and then run main.py
 with open("data_file.json", "r") as read_file:
     data = json.load(read_file)
 ```
