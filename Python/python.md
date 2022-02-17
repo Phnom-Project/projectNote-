@@ -25,6 +25,7 @@ with open("data_file.json", "r") as read_file:
 - load()	Decode while JSON file read
 #### import Another file
 ```py
+//from app.[fileName] import [def_Name] as xx
 from [fileName] import [def_Name] as xx
 from [folderName].[fileName] import [def_Name] as xx
 import [folderName].[fileName] as x1
