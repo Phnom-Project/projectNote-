@@ -23,3 +23,7 @@ pip install [packageName]
 pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
+> run 
+```shell
+uvicorn app.main:app --port 8080
+```
