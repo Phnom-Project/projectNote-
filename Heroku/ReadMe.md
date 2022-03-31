@@ -9,6 +9,7 @@ git push heroku master
 ```
 ### Docker
 ```shell
+// open Docker Desktop first
 heroku login    //if not authorization
 
 heroku container:login
