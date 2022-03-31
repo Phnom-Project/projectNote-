@@ -9,6 +9,7 @@ git push heroku master
 ```
 ### Docker
 ```shell
+heroku login
 heroku container:login
 [git clone https://github.com/heroku/alpinehelloworld.git]
 
