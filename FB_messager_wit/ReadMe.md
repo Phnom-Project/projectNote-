@@ -1,4 +1,11 @@
 ### Restapi
+> wehook authorization
+```py
+# get method 
+hub.mode
+hub.verify_token
+hub.challenge #must return in integer data type
+```
 ```js
 // app.post('/webhook', (req, res) => {
 //    let body = req.body;
