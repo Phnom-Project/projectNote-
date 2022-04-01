@@ -1,0 +1,71 @@
+{
+  "real message": {
+    "object": "page",
+    "entry": [
+      {
+        "id": "100******",
+        "time": 9999999,
+        "messaging": [
+          {
+            "sender": {
+              "id": "******"
+            },
+            "recipient": {
+              "id": "******"
+            },
+            "timestamp": 111111111,
+            "message": {
+              "mid": "m_CGr-*********",
+              "text": "Hlo",
+              "nlp": {
+                "entities": {},
+                "detected_locales": [
+                  {
+                    "locale": "bn_IN",
+                    "confidence": 0.3318
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "quick_reply": {
+    "object": "page",
+    "entry": [
+      {
+        "id": "******",
+        "time": 999999,
+        "messaging": [
+          {
+            "sender": {
+              "id": "******"
+            },
+            "recipient": {
+              "id": "******"
+            },
+            "timestamp": 11111111,
+            "message": {
+              "mid": "m_zO******",
+              "text": "10w40",
+              "nlp": {
+                "entities": {},
+                "detected_locales": [
+                  {
+                    "locale": "pl_PL",
+                    "confidence": 0.3672
+                  }
+                ]
+              },
+              "quick_reply": {
+                "payload": "10w40"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
