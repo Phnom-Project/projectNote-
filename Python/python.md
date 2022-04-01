@@ -1,4 +1,10 @@
 #### file i/o 
+> absolute path of folder (linux and window)
+```py
+import os
+def path():
+    return os.path.dirname(os.path.abspath(__file__))+'/res/intent.json'
+```
 > write
 - > object -> dict    array -> list
 ```py
