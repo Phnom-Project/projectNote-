@@ -12,6 +12,14 @@ COPY --from=build /app /
 EXPOSE 3000
 CMD ["npm", "start"]
 ```
+> enviroment
+```dockerfile
+FROM ubuntu                                                                                                            
+ARG BUILD_TIME=abc     # for built time                                                                                                
+ENV RUN_TIME=123       # for runtime                                                                                               
+RUN touch /env.txt                                                                                                     
+RUN printenv > /env.txt
+```
 #### doker cmd
 ```shell
 docker build -t good .
