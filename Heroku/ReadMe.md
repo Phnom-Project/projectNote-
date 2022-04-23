@@ -22,7 +22,7 @@ heroku create
 heroku container:push web   //Build the image and push to Container Registry
 heroku container:release web    //Then release the image to your app:
 ```
-> Dockerfile
+> Dockerfile (Python)
 ```dockerfile
 # FROM python:3.9-al
 # WORKDIR /code
