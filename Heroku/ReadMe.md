@@ -1,3 +1,6 @@
+## summary
+- python
+- asp.net core
 ### Initialization
 ```shell
 cd my-project/
@@ -55,4 +58,29 @@ USER myuser
 # $PORT is set by Heroku			
 # CMD ["uvicorn", "app.main:app", "--host", "::"]
 CMD uvicorn app.main:app --host 0.0.0.0 --port $PORT
+```
+> Dockerfile (asp.net core)
+```dockerfile
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
+WORKDIR /app
+
+# Copy csproj and restore as distinct layers
+COPY *.sln .
+COPY aspnetapp/*.csproj ./
+RUN dotnet restore
+
+# Copy everything else and build
+COPY aspnetapp/. .
+RUN dotnet publish -c Release -o out
+
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/sdk:6.0
+WORKDIR /app
+COPY --from=build-env /app/out .
+
+# Run the app on container startup
+# Use your project name for the second parameter
+# e.g. MyProject.dll
+# ENTRYPOINT [ "dotnet", "aspnetapp.dll" ]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet aspnetapp.dll
 ```
