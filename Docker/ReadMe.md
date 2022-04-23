@@ -23,4 +23,5 @@ RUN printenv > /env.txt
 #### doker cmd
 ```shell
 docker build -t good .
+docker run -d -p 8080:80 --name abc good
 ```
