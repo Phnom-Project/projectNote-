@@ -1,3 +1,8 @@
+### 3Mongodb
+> connecting string with certificate (ssl)
+```
+mongodb+srv://userID:password@host/database?authSource=admin&replicaSet=<>&tls=true&tlsCAFile=C%3A%5CUsers%5CDownloads%5C123.crt
+```
 ### 2support rang ip address in trusted source
 > 10.10.0.0/16
 ### 1asp.net core
