@@ -1,5 +1,6 @@
 ### 3Mongodb
-> connecting string with certificate (ssl)
+- > connecting string with certificate (ssl)
+- > mongosh "[connecting string]"
 ```
 mongodb+srv://userID:password@host/database?authSource=admin&replicaSet=<---->&tls=true&tlsCAFile=C%3A%5CUsers%5CDownloads%5C123.crt
 ```
