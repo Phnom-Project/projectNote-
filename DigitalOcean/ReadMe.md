@@ -1,14 +1,5 @@
-### 3Mongodb
+### 3mongodb
 - > connecting string with certificate (ssl)
-- > appsetting.json
-```json
-{
-  "BookStoreDatabase": {
-    "ConnectionString": "mongodb+srv://[userid]:[password]@[host]?authSource=admin&replicaSet=[---]&tls=true",
-    "DatabaseName": "BookStore",
-    "BooksCollectionName": "Books"
-},
-```
 - > mongosh "[connecting string]"
 ```
 mongodb+srv://userID:password@host/database?authSource=admin&replicaSet=<---->&tls=true&tlsCAFile=C%3A%5CUsers%5CDownloads%5C123.crt
@@ -21,4 +12,13 @@ mongodb+srv://userID:password@host/database?authSource=admin&replicaSet=<---->&t
 > - ~/.postgresql/postgresql.crt   (linux)
 ```sql
 Server=127.0.0.1;Database=myDataBase;Userid=myUsername;Password=myPassword;Integrated Security=true;Pooling=true;Trust Server Certificate=true;SslMode=Require;
+```
+- > appsetting.json
+```json
+{
+  "BookStoreDatabase": {
+    "ConnectionString": "mongodb+srv://[userid]:[password]@[host]?authSource=admin&replicaSet=[---]&tls=true",
+    "DatabaseName": "BookStore",
+    "BooksCollectionName": "Books"
+},
 ```
