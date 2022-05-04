@@ -1,5 +1,14 @@
 ### 3Mongodb
 - > connecting string with certificate (ssl)
+- > appsetting.json
+```json
+{
+  "BookStoreDatabase": {
+    "ConnectionString": "mongodb+srv://[userid]:[password]@[host]?authSource=admin&replicaSet=[---]&tls=true",
+    "DatabaseName": "BookStore",
+    "BooksCollectionName": "Books"
+},
+```
 - > mongosh "[connecting string]"
 ```
 mongodb+srv://userID:password@host/database?authSource=admin&replicaSet=<---->&tls=true&tlsCAFile=C%3A%5CUsers%5CDownloads%5C123.crt
