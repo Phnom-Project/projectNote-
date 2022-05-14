@@ -1,3 +1,7 @@
+#### MudBlazor
+```shell
+dotnet new mudblazor --host server --name birdware
+```
 #### ⚡hot Reload
 ```shell
 dotnet watch
