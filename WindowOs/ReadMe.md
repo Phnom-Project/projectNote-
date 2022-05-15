@@ -1,4 +1,4 @@
-### window update error (0x800f0831)
+### window update manual
 ```
 sfc /scannow
 DISM /Online /Cleanup-Image /CheckHealth
