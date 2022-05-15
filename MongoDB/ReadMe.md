@@ -1,5 +1,16 @@
-#### MongoDB title
-#### connection
+#### MongoDB Title
+- 1connection
+- 2list\<object\> to json
+#### 2list\<object\> to json
+```cs
+List<Book> Document = collection.Find(_=>true).ToList();
+foreach (var item in Document)
+{
+    var json = JsonSerializer.Serialize(item);
+    Console.WriteLine(json);
+}
+```
+#### 1connection
 > Book.cs
 ```cs
 using MongoDB.Bson;
