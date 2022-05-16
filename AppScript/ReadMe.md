@@ -13,7 +13,7 @@
 - `2Sheet`
 #### 1Form
 - 1get data from GForm
-> 1get data from GForm `warning : multiple choice`
+> 1get data from GForm `🟡 warning : multiple choice is array`
 ```js
 function onFormSubmit(event) {
   record_array = []
@@ -32,7 +32,7 @@ function onFormSubmit(event) {
     Logger.log(title);
     Logger.log(answer);
 
-    record_array.push(answer[0]); // for first of multiple choice
+    record_array.push(answer[0]); //🟡 for first of multiple choice
   }
   AddRecord(record_array[0], record_array[1], record_array[2]);
 }
