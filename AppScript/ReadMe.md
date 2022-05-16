@@ -1,3 +1,13 @@
+# Note
+1. **App Script**:
+    1. which cell that have ever input DateTime type when we use it again by input number ,it will consider this number DateTime too.
+2. **column** array =
+    1. [[A1,B1,C1],[A2,B2,C2]]
+3. **row** array = 
+    1. [[A1],
+    2. [A2],
+    3. [A3]]
+4. **'Z'<'z'** return **true**
 ### Title
 - `1Form`
 - `2Sheet`
