@@ -13,27 +13,35 @@
 - `2Sheet`
 #### 1Form
 - 1get data from GForm
-> 1get data from GForm
+> 1get data from GForm `warning : multiple choice`
 ```js
-function formResponsesToArray() {
-  var form = FormApp.openById(...),
-  var responses = form.getResponses(), stringResponses = []
-  responses.forEach(function (r) {
-    var response = [];
-    r.getItemResponses().forEach(function (i) {
-      response.push(i.getResponse())
-    })
-    stringResponses.push(response)
-  });
-  stringResponses = stringResponses.reduce(function (e) {
-    return stringResponses[3];
-  })
-  Logger.log('1' + stringResponses);
-  // sheet.appendRow([stringResponses[0][0],stringResponses[0][1]]);
-  var x = stringResponses[0][0];
-  var x1 = stringResponses[1][0];
-  Logger.log(x + " , " + x1)
-  sheet.appendRow([x, x1, 1]);
+function onFormSubmit(event) {
+  record_array = []
+  var form = FormApp.getActiveForm(); // Form ID
+  var formResponses = form.getResponses();
+  var formCount = formResponses.length;
+
+  var formResponse = formResponses[formCount - 1];
+  var itemResponses = formResponse.getItemResponses();
+
+  for (var j = 0; j < itemResponses.length; j++) {
+  var itemResponse = itemResponses[j];
+    var title = itemResponse.getItem().getTitle();
+    var answer = itemResponse.getResponse();
+
+    Logger.log(title);
+    Logger.log(answer);
+
+    record_array.push(answer[0]); // for first of multiple choice
+  }
+  AddRecord(record_array[0], record_array[1], record_array[2]);
+}
+
+function AddRecord(first_name, last_name, color) {
+  var url = '';   //URL OF GOOGLE SHEET;
+  var ss= SpreadsheetApp.openById(url);
+  var dataSheet = ss.getSheetByName("123");
+  dataSheet.appendRow([first_name, last_name, color, new Date()]);
 }
 ```
 #### 2Sheet
