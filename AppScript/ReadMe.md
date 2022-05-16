@@ -6,16 +6,24 @@
 > 1get data from GForm
 ```js
 function formResponsesToArray() {
-  var app = FormApp.openById(...),
-  responses = app.getResponses(), stringResponses = []
-  responses.forEach(function(r) {
-    var response = []
-    r.getItemResponses().forEach(function(i) {
+  var form = FormApp.openById(...),
+  var responses = form.getResponses(), stringResponses = []
+  responses.forEach(function (r) {
+    var response = [];
+    r.getItemResponses().forEach(function (i) {
       response.push(i.getResponse())
     })
     stringResponses.push(response)
+  });
+  stringResponses = stringResponses.reduce(function (e) {
+    return stringResponses[3];
   })
-  Logger.log(stringResponses)
+  Logger.log('1' + stringResponses);
+  // sheet.appendRow([stringResponses[0][0],stringResponses[0][1]]);
+  var x = stringResponses[0][0];
+  var x1 = stringResponses[1][0];
+  Logger.log(x + " , " + x1)
+  sheet.appendRow([x, x1, 1]);
 }
 ```
 #### 2Sheet
