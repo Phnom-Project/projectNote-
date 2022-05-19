@@ -55,14 +55,14 @@ function loadForm() {
   ui.showSidebar(htmlOutput);
 }
 ```
-#### 3Calendar
+#### 3Calendar (create,get,delete)
 ```js
 function workWithcalendar(){
   var ss = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('123');
   var cal = CalendarApp.getCalendarById("[id]");
   var event = cal.createEvent("birdware",new Date("05/19/2022 12:00 AM"),new Date("05/19/2022 12:00 PM"));
 }
-
+// get, delete
 function read4Calendar(){
   var cal = CalendarApp.getCalendarById("[id]");
   var event = cal.getEvents(new Date("05/19/2022 12:00 AM"),new Date("05/19/2022 12:00 PM"));
