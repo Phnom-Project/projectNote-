@@ -11,6 +11,7 @@
 ### Title
 - `1Form`
 - `2Sheet`
+- `3Calendar`
 #### 1Form
 - 1get data from GForm
 > 1get data from GForm `🟡 warning : multiple choice is array`
@@ -52,5 +53,13 @@ function loadForm() {
   const htmlOutput = htmlForSidebar.evaluate();
   const ui = SpreadsheetApp.getUi();
   ui.showSidebar(htmlOutput);
+}
+```
+#### 3Calendar
+```js
+function workWithcalendar(){
+  var ss = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('123');
+  var cal = CalendarApp.getCalendarById("[id]");
+  var event = cal.createEvent("birdware",new Date("05/19/2022 12:00 AM"),new Date("05/19/2022 12:00 PM"));
 }
 ```
