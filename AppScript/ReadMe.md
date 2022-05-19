@@ -62,4 +62,19 @@ function workWithcalendar(){
   var cal = CalendarApp.getCalendarById("[id]");
   var event = cal.createEvent("birdware",new Date("05/19/2022 12:00 AM"),new Date("05/19/2022 12:00 PM"));
 }
+
+function read4Calendar(){
+  var cal = CalendarApp.getCalendarById("[id]");
+  var event = cal.getEvents(new Date("05/19/2022 12:00 AM"),new Date("05/19/2022 12:00 PM"));
+  //read
+  for(var i = 0;i<event.length;i++){
+    Logger.log(event);
+    Logger.log(event[i].getTitle());
+  }
+  //delete
+  for(var i = 0;i<event.length;i++){
+    Logger.log(event[i].getTitle());
+    Logger.log(event[i].deleteEvent());
+  } 
+}
 ```
