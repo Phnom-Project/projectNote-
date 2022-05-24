@@ -1,6 +1,16 @@
 # Title
 ```diff
 + 3Reflection
++ 4run C# code from string
+```
+#### 4run C# code from string
+```cs
+using Microsoft.CodeAnalysis.CSharp.Scripting;
+//you may need to import the namespace from NuGet packages [dotnet add package Microsoft.CodeAnalysis.CSharp.Scripting]
+var now = CSharpScript.EvaluateAsync<string>("System.DateTime.Now.ToString()").Result;
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine(now);
+
 ```
 #### 3Reflection (.net 6)
 > testlib/test.cs
