@@ -10,3 +10,7 @@ git push -u -f origin master
 ```shell
 curl -i -u username:$token https://api.github.com/users/octocat
 ```
+### Create new Branch
+```shell
+git checkout -b [name_of_your_new_branch]
+```
