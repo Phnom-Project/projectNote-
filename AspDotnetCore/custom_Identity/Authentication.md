@@ -140,3 +140,11 @@ namespace BlazorAuth.Service
     </Router>
 </CascadingAuthenticationState>
 ```
+>> Program.cs
+```cs
+...
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationProvider>();
+builder.Services.AddAuthorizationCore();
+builder.Services.AddScoped<IAccountService, AccountService>();
+...
+```
