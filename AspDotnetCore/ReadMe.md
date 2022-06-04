@@ -1,3 +1,10 @@
+#### Crytography
+```cs
+//<PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
+using BCrypt.Net;
+string passwordHash = BCrypt.Net.BCrypt.HashPassword("Pa$$w0rd");
+bool verified = BCrypt.Net.BCrypt.Verify("Pa$$w0rd", passwordHash);
+```
 #### MudBlazor
 ```shell
 dotnet new mudblazor --host server --name birdware
