@@ -1,9 +1,21 @@
 ## Title
+- 6Interop Static page
 - 5Crytography
 - 4MudBlazor
 - 3hot Reload
 - 2blazor wasm
 - 1load resource from wwwroot
+#### 6Interop Static page
+> Assume you have put the index.html within the wwwroot/ folder, you could achieve that by registering a DefaultFiles middleware:
+
+> Program.cs
+```cs
+app.UseDefaultFiles();    // add this line before invoking app.UseStaticFiles();
+app.UseStaticFiles();
+...
+```
+> (Note the order of middlewares is important)
+> Or if you want to put index.html within a different location, you could pass a custom FileProvider (e.g. PhysicalFileProvider). For more details, see official docs.
 #### 5Crytography
 ```cs
 //<PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
