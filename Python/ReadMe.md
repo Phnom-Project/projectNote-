@@ -22,6 +22,18 @@ py -m venv venv
 pip install [packageName]
 pip freeze > requirements.txt
 pip install -r requirements.txt
+___V2___
+py -m venv venv
+cd venv/scripts
+./Activate
+
+(optional error pip) python -m pip install --upgrade pip
+pip install --no-cache-dir --upgrade -r requirements.txt
+
+docker build -t [name] .
+docker run -p 8080:80 [imageName]
+
+uvicorn app.main:app --port 8080
 ```
 > run 
 ```shell
