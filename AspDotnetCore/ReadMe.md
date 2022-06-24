@@ -1,10 +1,20 @@
 ## Title
+- 7custom favicon
 - 6Interop Static page
 - 5Crytography
 - 4MudBlazor
 - 3hot Reload
 - 2blazor wasm
 - 1load resource from wwwroot
+#### 7custom favicon
+> _Layout.cshtml
+```
+<head>
+    ...
+    <link rel="icon" type="image/x-icon" href="~/asset.ico">
+    ...
+</head>
+```
 #### 6Interop Static page
 > Assume you have put the index.html within the wwwroot/ folder, you could achieve that by registering a DefaultFiles middleware:
 > Program.cs
