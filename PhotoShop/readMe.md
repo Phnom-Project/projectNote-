@@ -1,0 +1,2 @@
+- Spirography design Effect (Ctrl + Shift + Alt + T)
+- Merge shape (Ctrl + Alt + T)
