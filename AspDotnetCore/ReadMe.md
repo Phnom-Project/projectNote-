@@ -54,6 +54,10 @@ dotnet watch
 ```
 #### 2blazor wasm 
 > 💡 virtual folder  can share file folder and file **(if not refresh F5)**
+> create with pwa
+```shell
+dotnet new blazorwasm -o MyBlazorPwa --pwa
+```
 #### 1load resource from wwwroot
 ```c#
 private WeatherForecast[] forecasts;
