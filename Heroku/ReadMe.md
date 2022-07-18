@@ -65,8 +65,12 @@ CMD uvicorn app.main:app --host 0.0.0.0 --port $PORT
 ```shell
 heroku auth:login
 heroku container:login
+heroku container:push web --app [name]
+heroku container:release web --app [name]
 ```
 > Dockerfile (asp.net core)
+> - dockerfile (out of project)
+> - appnetapp/
 ```dockerfile
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /app
