@@ -26,6 +26,7 @@ heroku create
 heroku container:push web   //Build the image and push to Container Registry
 heroku container:release web    //Then release the image to your app:
 ```
+##### Python
 > Dockerfile (Python)
 ```dockerfile
 # FROM python:3.9-al
@@ -59,6 +60,11 @@ USER myuser
 # $PORT is set by Heroku			
 # CMD ["uvicorn", "app.main:app", "--host", "::"]
 CMD uvicorn app.main:app --host 0.0.0.0 --port $PORT
+```
+##### Asp.net core
+```shell
+heroku auth:login
+heroku container:login
 ```
 > Dockerfile (asp.net core)
 ```dockerfile
