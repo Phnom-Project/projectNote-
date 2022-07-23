@@ -1,4 +1,5 @@
 ## Title
+- 8capture image
 - 7custom favicon
 - 6Interop Static page
 - 5Crytography
@@ -6,6 +7,38 @@
 - 3hot Reload
 - 2blazor wasm
 - 1load resource from wwwroot
+#### 8capture image
+> image.js
+```js
+window.displayImage = async (imageElementId, imageStream) => {
+    const arrayBuffer = await imageStream.arrayBuffer();
+    const blob = new Blob([arrayBuffer]);
+    const url = URL.createObjectURL(blob);
+    document.getElementById(imageElementId).src = url;
+};
+```
+> index.razor
+```razor
+@page "/"
+@inject IJSRuntime JS
+<p>
+    <img id="image" />
+</p>
+<InputFile OnChange="@LoadFiles" accept="image/*" capture />
+
+@code {
+    long maxFileSize = 1024 * 1024 * 15;
+    private async Task LoadFiles(InputFileChangeEventArgs e)
+    {
+            var ImageFile = await e.File.RequestImageFileAsync("image/*",maxHeight: 640,maxWidth: 480);
+            await using (Stream stream = ImageFile.OpenReadStream(maxFileSize))
+                {
+                    var dotnetImageStream = new DotNetStreamReference(stream);
+                    await JS.InvokeVoidAsync("displayImage", "image", dotnetImageStream);
+                }
+    }
+}
+```
 #### 7custom favicon
 > _Layout.cshtml
 ```
