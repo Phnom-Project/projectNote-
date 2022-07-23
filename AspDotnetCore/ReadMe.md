@@ -81,7 +81,7 @@ bool verified = BCrypt.Net.BCrypt.Verify("Pa$$w0rd", passwordHash);
 ```shell
 dotnet new mudblazor --host server --name birdware
 ```
-#### ⚡3hot Reload
+#### 3hot Reload⚡
 ```shell
 dotnet watch
 ```
