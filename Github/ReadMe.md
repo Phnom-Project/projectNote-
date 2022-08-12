@@ -11,9 +11,10 @@ git push -u origin main
 ```shell
 git init
 git add -A //or git add . 
-git commit -m 'Added my project'
-git remote add origin https://github.com/5W-company/qwe.git
+git remote add origin https://github.com/5W-company/1.git
 git branch -M main
+git pull https://github.com/5W-company/1.git main
+git commit -m 'Added my project'
 git push -u origin main
 ```
 ### auth user for rest github api
