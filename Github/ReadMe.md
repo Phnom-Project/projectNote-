@@ -1,10 +1,20 @@
+###
+```shell
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/5W-company/qwe.git
+git push -u origin main
+```
 ### for existing project
 ```shell
 git init
 git add -A //or git add . 
 git commit -m 'Added my project'
-git remote add origin git@github.com:sammy/my-new-project.git
-git push -u -f origin main
+git remote add origin https://github.com/5W-company/qwe.git
+git branch -M main
+git push -u origin main
 ```
 ### auth user for rest github api
 ```shell
