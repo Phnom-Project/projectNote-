@@ -9,11 +9,11 @@ git push -u origin main
 ```
 ### for existing project
 ```shell
-git init
-git add -A //or git add . 
+git init 
 git remote add origin https://github.com/5W-company/1.git
 git branch -M main
 git pull https://github.com/5W-company/1.git main
+git add -A //or git add .
 git commit -m 'Added my project'
 git push -u origin main
 ```
