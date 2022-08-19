@@ -18,8 +18,14 @@ firebase init
 ```json
 {
   "hosting": {
+    "public": "wwwroot",
     "site": "webassemblytesthome",
-    "public": "publish/wwwrooot",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
   }
 }
 ```
