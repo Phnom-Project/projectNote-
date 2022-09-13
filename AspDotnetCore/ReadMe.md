@@ -1,4 +1,5 @@
 ## Title
+- 9 Remote access to local (https://blog.kloud.com.au/2017/02/27/remote-access-to-local-aspnet-core-apps-from-mobile-devices/)
 - 8capture image
 - 7custom favicon
 - 6Interop Static page
