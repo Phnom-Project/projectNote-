@@ -2,9 +2,7 @@
 ```shell
 dotnet add package Microsoft.Playwright
 dotnet build
-# for miss assembly
-npm install playwright
-
+# for miss assembly downgrade version Microsoft.Playwright 1.25.0
 ```
 > Program.cs
 ```cs
