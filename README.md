@@ -39,3 +39,6 @@ gradlew.bat build
 ```shell
 docker build -t [name] .
 ```
+### GUID
+free Online GUID / UUID Generator
+https://www.guidgenerator.com/
