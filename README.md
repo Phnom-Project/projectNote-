@@ -6,20 +6,29 @@
 @@ Pink @@
 # Gray
 ```
+## List
+```
+1Clear cache(blazor pwa)
+2Load file locally
+3Hot Reload (blazor)
+4gradle (android studio)
+5docker
+6GUID
+```
 - `$` = sign of customize name of user 
-### Clear cache(blazor pwa)
+### 1Clear cache(blazor pwa)
 > service-worker.published.js
 ```js
 const CACHE_VERSION = 1.0;
 //add code below for new version
 const CACHE_VERSION = 1.1;
 ```
-### Load file locally
+### 2Load file locally
 > locally
 - file:///D:/Download/
 > server
 - https://github.com/
-### Hot Reload (blazor)
+### 3Hot Reload (blazor)
 > launchSetting.json
 ```json
 "hotReloadProfile": "blazorwasm"
@@ -29,16 +38,16 @@ const CACHE_VERSION = 1.1;
 dotnet watch run
 ```
 http://localhost:5000
-### gradle (android studio)
+### 4gradle (android studio)
 >window
 ```shell
 ./gradlew build
 gradlew.bat build
 ```
-### docker
+### 5docker
 ```shell
 docker build -t [name] .
 ```
-### GUID
+### 6GUID
 free Online GUID / UUID Generator
 https://www.guidgenerator.com/
