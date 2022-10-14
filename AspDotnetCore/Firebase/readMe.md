@@ -8,6 +8,7 @@ using Google.Apis.Auth.OAuth2;
 
 FirebaseApp.Create(new AppOptions()
 {
+    //Credential = GoogleCredential.GetApplicationDefault() for export to env
     Credential = GoogleCredential.FromFile(@"firebase-config.json"),
 });
 
