@@ -28,4 +28,6 @@ docker run -d -p 8080:80 --name abc good
 docker run -it --name playwrigthDotnet -p 2200:22 -d mcr.microsoft.com/playwright/dotnet:latest
 ////edit file with copy and paste in VS code
 cat > program.cs
+////  download file from container
+docker cp [containerName]:/PlaywrightDemo/screenshot.png .
 ```
