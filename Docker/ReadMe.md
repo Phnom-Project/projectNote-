@@ -26,4 +26,6 @@ docker build -t good .
 docker run -d -p 8080:80 --name abc good
 ///for visual code
 docker run -it --name playwrigthDotnet -p 2200:22 -d mcr.microsoft.com/playwright/dotnet:latest
+////edit file with copy and paste in VS code
+cat > program.cs
 ```
