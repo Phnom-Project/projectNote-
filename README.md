@@ -6,6 +6,8 @@
 @@ Pink @@
 # Gray
 ```
+### Streaming video tutorial
+- https://medium.com/canal-tech/how-video-streaming-works-on-the-web-an-introduction-7919739f7e1
 ## List
 ```
 1Clear cache(blazor pwa)
