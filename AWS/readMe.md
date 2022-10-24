@@ -1,5 +1,5 @@
 ### Lambda 
-#### Container Image
+#### Container Image (need S3_bucket, ECR, lamda)
 ```shell
 dotnet new ".NET 6" --list --tag Lambda
 //The deployment tool needs an S3 bucket to store its template
