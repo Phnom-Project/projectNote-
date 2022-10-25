@@ -1,4 +1,13 @@
-#### build small image
+### asp.net core after publish
+```
+FROM mcr.microsoft.com/dotnet/sdk:6.0
+COPY ./output /publish
+WORKDIR /publish
+
+EXPOSE 5175
+ENTRYPOINT ["dotnet", "WeatherForecastAPI.dll"]
+```
+### build small image
 ```dockerfile
 FROM node:8 as build
 
@@ -20,7 +29,7 @@ ENV RUN_TIME=123       # for runtime
 RUN touch /env.txt                                                                                                     
 RUN printenv > /env.txt
 ```
-#### doker cmd
+### doker cmd
 ```shell
 docker build -t good .
 docker run -d -p 8080:80 --name abc good
