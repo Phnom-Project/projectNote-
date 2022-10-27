@@ -15,10 +15,10 @@ gcloud auth configure-docker us-east1-docker.pkg.dev
 docker build -t weatherforecastapi-image  -f Dockerfile .
 // tag
 docker tag weatherforecastapi-image us-east1-docker.pkg.dev/weatherforecastapi-proj/weatherforecastapi-repo/weatherforecastapi-image:v1.0
-// push
+// push (example)
 docker push us-east1-docker.pkg.dev/weatherforecastapi-proj/weatherforecastapi-repo/weatherforecastapi-image:v1.0
 ```
-> note
+> note for push to GCP
 ```
 docker push REGION-docker.pkg.dev/PROJECT_ID/REPOSITORY_NAME/TAGGED_IMAGE_NAME
 For our purposes these are
