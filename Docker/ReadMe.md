@@ -1,11 +1,13 @@
 ### asp.net core after publish
 ```dockerfile
 FROM mcr.microsoft.com/dotnet/sdk:6.0
-COPY ./output /publish
+COPY ./publish /publish
 WORKDIR /publish
 
 EXPOSE 5175
-ENTRYPOINT ["dotnet", "WeatherForecastAPI.dll"]
+# program.cs (delete app.UseHttpsRedirection(); 
+ENV ASPNETCORE_URLS=http://+:5175   
+ENTRYPOINT ["dotnet", "dotnetCloudRun.dll"]
 ```
 ### build small image
 ```dockerfile
