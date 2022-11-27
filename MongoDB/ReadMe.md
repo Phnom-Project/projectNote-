@@ -1,3 +1,12 @@
+### Backup & Restore
+    [backup all]
+    mongodump --host 127.0.0.1:27017 
+    [backup specific]
+    mongodump --host 127.0.0.1:27017 --db "test"
+    [restore all]
+    mongorestore --host 127.0.0.1 --port 27017 ./dump
+    [restore specify]
+    mongorestore --host 127.0.0.1 --port 27017 --db test23  ./dump/test
 #### MongoDB Title
 - 1connection
 - 2list\<object\> to json
