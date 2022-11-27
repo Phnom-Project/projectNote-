@@ -1,6 +1,47 @@
 #### MongoDB Title
 - 1connection
 - 2list\<object\> to json
+#### 3Upload & Download image
+```cs
+namespace MongoConsole;
+
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Driver.GridFS;
+public class MongoUtilities
+{
+    static IMongoClient dbClient = new MongoClient("mongodb://127.0.0.1:27017");
+    static IMongoDatabase database = dbClient.GetDatabase("test");
+    static IGridFSBucket bucket = new GridFSBucket(database, new GridFSBucketOptions
+        {
+            BucketName = "images",
+            ChunkSizeBytes = 1048576, // 1MB
+            WriteConcern = WriteConcern.WMajority,
+            ReadPreference = ReadPreference.Secondary
+        });
+    internal static void upload()
+    {
+        // var bucket = new GridFSBucket(database);
+        // bucket;
+
+        string filePath = @"E:\1download\2image\cheatsheet.jpg";
+        byte[] source = File.ReadAllBytes(filePath);
+        var options = new GridFSUploadOptions
+        {
+            ChunkSizeBytes = 64512, // 63KB
+        };
+        var id = bucket.UploadFromBytes("filename", source, options);
+        Console.Write(id);
+    }
+    internal void Download(){
+        ObjectId id = new ObjectId("63835a33eb5203b8332629da");
+        var bytes = bucket.DownloadAsBytes(id);
+        // string lines = BitConverter.ToString(bytes).Replace("-", "").ToLower();
+        File.WriteAllBytes("WriteLines.jpg", bytes);
+        // Console.Write();
+    }
+}
+```
 #### 2list\<object\> to json
 ```cs
 List<Book> Document = collection.Find(_=>true).ToList();
