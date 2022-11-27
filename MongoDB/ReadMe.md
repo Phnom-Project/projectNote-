@@ -6,8 +6,8 @@
 namespace MongoConsole;
 
 using MongoDB.Bson;
-using MongoDB.Driver;
-using MongoDB.Driver.GridFS;
+using MongoDB.Driver;//<PackageReference Include="MongoDB.Driver" Version="2.18.0" />
+using MongoDB.Driver.GridFS;//<PackageReference Include="MongoDB.Driver.GridFS" Version="2.18.0" />
 public class MongoUtilities
 {
     static IMongoClient dbClient = new MongoClient("mongodb://127.0.0.1:27017");
