@@ -3,6 +3,11 @@
 + 3Reflection
 + 4run C# code from string
 ```
+#### string interpolation
+````cs
+Href= '@string.Format("/admin/post/{0}",@context.PostID)' 
+Href="@($"/admin/post/{@context.PostID}")"
+```
 #### 4run C# code from string
 ```cs
 using Microsoft.CodeAnalysis.CSharp.Scripting;
