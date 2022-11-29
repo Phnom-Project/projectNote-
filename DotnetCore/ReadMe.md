@@ -3,8 +3,8 @@
 + 3Reflection
 + 4run C# code from string
 ```
-#### string interpolation
-````cs
+#### 5 String interpolation
+```razor
 Href= '@string.Format("/admin/post/{0}",@context.PostID)' 
 Href="@($"/admin/post/{@context.PostID}")"
 ```
