@@ -3,6 +3,22 @@
 + 3Reflection
 + 4run C# code from string
 ```
+#### 6 Byte[] to base64, base64 to byte[]
+```cs
+public void SaveToBase64File(){
+        // string filePath = @"E:\1download\2image\cheatsheet.jpg";
+        string filePath = @"WriteLines.jpg";
+        byte[] source = File.ReadAllBytes(filePath);
+
+        File.WriteAllText("File/WriteLines.txt", Convert.ToBase64String(source));
+    }
+    public void FromBase64ToFile(){
+        string path = @"WriteLines.jpg";
+        string source = File.ReadAllText("File/WriteLines.txt");
+        File.WriteAllBytes("FileImage/WriteLines.jpg", Convert.FromBase64String(source));
+
+    }
+```
 #### 5 String interpolation
 ```razor
 Href= '@string.Format("/admin/post/{0}",@context.PostID)' 
