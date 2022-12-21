@@ -1,2 +1,2 @@
 ## CyberSecurity
-- #### Cross site (xxs)
+- ####  Cross-site scripting (xxs)
