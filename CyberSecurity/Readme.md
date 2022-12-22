@@ -24,6 +24,7 @@
     - ##### Requiring Usernames, Email Address, or Both : 
         - Validating Email Addresses,
         - Banning Disposable Email Accounts
+        - The only reliable way to validate an email address is to send it an email containing a link with a unique, temporary validation token that your site can check when the user clicks it.
     - ##### Securely Storing Passwords : From breach user data password that can use these to attack by brute-force , rainbow table attack
         - Requiring Complex Passwords
         - Hashing Passwords, Salting Hashes : random salting hash For make nobody can know this plaintext-password
@@ -32,3 +33,4 @@
         - Preventing Potential Enumeration Vulnerabilities : For example, simply use the error message an **incorrect username or password** was entered whenever the username is unrecognized or the password is incorrect.
         - If an attacker clicks a “Forgotten password” link and types in an email address to request a password-reset link, the response message on the page shouldn’t reveal whether a reset email was sent. This prevents the attacker from knowing whether that email address is tied to an account on your site. Keep the message neutral: something like **Check your inbox**. 
         - Attackers may also use timing attacks to enumerate users by measuring HTTP response times. Hashing a password is a time-consuming operation;
+    - #### Implementing CAPTCHA    
