@@ -34,3 +34,18 @@
         - If an attacker clicks a “Forgotten password” link and types in an email address to request a password-reset link, the response message on the page shouldn’t reveal whether a reset email was sent. This prevents the attacker from knowing whether that email address is tied to an account on your site. Keep the message neutral: something like **Check your inbox**. 
         - Attackers may also use timing attacks to enumerate users by measuring HTTP response times. Hashing a password is a time-consuming operation;
     - #### Implementing CAPTCHA    
+- #### Session Hijacking
+    - ##### Cross-Site Scripting
+        - An attacker will try to use JavaScript injected into a user’s browser to read the user’s cookies and send them to an external web server that the attacker controls. The attacker will then harvest these cookies as they appear in the web server’s log file, and then cut and paste the cookie values into a browser session—or more likely, add them to a script—to perform actions under the hacked user’s session.
+        - 🔐To defuse session hijacking via cross-site scripting, mark all cookies as HttpOnly in the Set-Cookie header. This tells the browser not to make cookies available to JavaScript code.
+        ```
+        Set-Cookie: session_id=278283910977381992837; HttpOnly
+        ```
+    - ##### Man-in-the-Middle Attacks
+        - An attacker can also steal cookies by using a man-in-the-middle attack: the attacker finds a way to sit between the browser and the web server and read network traffic as it passes back and forth. To protect against cookie theft via man-in-the-middle attacks, your website should use HTTPS.
+        - 🔐After you’ve enabled HTTPS on the web server, you should mark your cookies as Secure, as shown below, so the browser knows to never send unencrypted cookies over HTTP.
+        ```
+        Set-Cookie: session_id=278283910977381992837; Secure
+        ```
+    - ##### 
+    - ##### 
