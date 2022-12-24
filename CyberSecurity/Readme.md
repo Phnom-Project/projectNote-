@@ -62,7 +62,7 @@
             ```
             Set-Cookie: session_id=278283910977381992837; SameSite=Lax
             ```
-    - ##### Session Fixation
+    - ##### Session Fixation ,fixate (find or set)
         - First, writing session IDs in the URL allows them to be leaked in log files. An attacker who gets access to your logs can hijack your users’ sessions simply by dropping these types of URLs in the browser.The second issue is a vulnerability called session fixation. When web servers vulnerable to session fixation encounter an unknown session ID in a URL, they’ll ask the user to authenticate themselves, and then establish a session under the supplied session ID. This allows a hacker to fixate the session ID ahead of time, sending victims tempting links (usually in unsolicited email or spam in a site’s comment sections) with the fixated session ID. Any user who clicks the link can have their session hijacked, because the attacker can simply use that same URL in their own browser, having fixed the session ID ahead of time. The act of clicking the link and logging it transforms the dummy session ID into a real session ID—one that the hacker knows.
         ```
         http://www.example.com/catalog/index.html;jsessionid=1234
