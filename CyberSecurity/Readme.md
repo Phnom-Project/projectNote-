@@ -88,24 +88,24 @@ the actions that each user or account can perform on that object. The canonical 
             - Whitelists and Blacklists : A whitelist describes the users or accounts that can access a particular resource, and bans all other users. A blacklist explicitly describes the users or accounts that are banned from accessing a resource, implying that the resource should be made accessible to any other user or account.
             - Role-Based Access Control :  Amazon Web Services identity and access management (IAM) system is an example of a comprehensive role-based system, as is Microsoft’s Active Directory.
             - Adding Audit Trails : to help with troubleshooting and forensic analysis. Audit trails are log files or database entries that are recorded whenever a user performs an action. Simply adding logging statements as users navigate your site (14:32:06 2019-02-05: User example @gmail.com logged in) can help you diagnose any problems as they occur at runtime, and provide vital evidence in the event that you do get hacked.
-       - Directory Traversal
-            - Consider a shopping application that displays images of items for sale. Images are loaded via some HTML like the following:
+       - ##### Directory Traversal
+       > Consider a shopping application that displays images of items for sale. Images are loaded via some HTML like the following:
        ```
        <img src="/loadImage?filename=218.png">
        ```
-       - The loadImage URL takes a filename parameter and returns the contents of the specified file. The image files themselves are stored on disk in the location **/var/www/images/**. To return an image, the application appends the requested filename to this base directory and uses a filesystem API to read the contents of the file. In the above case, the application reads from the following file path:
+       > The loadImage URL takes a filename parameter and returns the contents of the specified file. The image files themselves are stored on disk in the location **/var/www/images/**. To return an image, the application appends the requested filename to this base directory and uses a filesystem API to read the contents of the file. In the above case, the application reads from the following file path:
        ```
        /var/www/images/218.png
        ```
-       - The application implements no defenses against directory traversal attacks, so an attacker can request the following URL to retrieve an arbitrary file from the server's filesystem:
+       > The application implements no defenses against directory traversal attacks, so an attacker can request the following URL to retrieve an arbitrary file from the server's filesystem:
        ```
        https://insecure-website.com/loadImage?filename=../../../etc/passwd
        ```
-       - This causes the application to read from the following file path:
+       > This causes the application to read from the following file path:
        ```
        /var/www/images/../../../etc/passwd
        ```
-       - The sequence **../** is valid within a file path, and means to step up one level in the directory structure. The three consecutive **../** sequences step up from **/var/www/images/** to the filesystem root, and so the file that is actually read is:
+       > The sequence **../** is valid within a file path, and means to step up one level in the directory structure. The three consecutive **../** sequences step up from **/var/www/images/** to the filesystem root, and so the file that is actually read is:
        ```
        /etc/passwd
        ```
