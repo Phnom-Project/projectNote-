@@ -121,6 +121,8 @@ the actions that each user or account can perform on that object. The canonical 
         - When you design your website, avoid telltale file suffixes in URLs, such as .php, .asp, and .jsp. Implement clean URLs instead—URLs that do not give away implementation details. URLs with file extensions are common in older web servers, which explicitly reference template filenames. Make sure to avoid such extensions.
     - ##### 🔐 Use Generic Cookie Parameters 
         - The name of the cookie your web server uses to store session state frequently reveals your server-side technology. For instance, Java web servers usually store the session ID under a cookie named JSESSIONID. Attackers can check these kinds of session cookie names to identify servers : 
+        > The hacking tool Metasploit attempting to detect and compromise an Apache 
+Tomcat server
         ```java
         if response.get_cookies.match(/JSESSIONID=(.*);(.*)/i)
         jsessionid = $1
