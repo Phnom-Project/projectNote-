@@ -88,7 +88,7 @@ the actions that each user or account can perform on that object. The canonical 
             - Whitelists and Blacklists : A whitelist describes the users or accounts that can access a particular resource, and bans all other users. A blacklist explicitly describes the users or accounts that are banned from accessing a resource, implying that the resource should be made accessible to any other user or account.
             - Role-Based Access Control :  Amazon Web Services identity and access management (IAM) system is an example of a comprehensive role-based system, as is Microsoft’s Active Directory.
             - Adding Audit Trails : to help with troubleshooting and forensic analysis. Audit trails are log files or database entries that are recorded whenever a user performs an action. Simply adding logging statements as users navigate your site (14:32:06 2019-02-05: User example @gmail.com logged in) can help you diagnose any problems as they occur at runtime, and provide vital evidence in the event that you do get hacked.
-       - ##### Directory Traversal
+    - ##### Directory Traversal
        > Consider a shopping application that displays images of items for sale. Images are loaded via some HTML like the following:
        ```
        <img src="/loadImage?filename=218.png">
