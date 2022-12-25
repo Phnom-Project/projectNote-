@@ -6,7 +6,8 @@ list
 4 Session Hijacking
 5 Permissions
 6 INFORMATION LEAK
-7 Server-Side Request Forgery(SSRF) 🚧 > Readme2.md
+>>><<< Readme2.md >>><<<
+7 Server-Side Request Forgery(SSRF) 🚧 
 ```
 ## CyberSecurity :crossed_swords:
 - ### 1 Cross-site scripting (xxs)
