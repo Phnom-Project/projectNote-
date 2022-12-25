@@ -1,3 +1,13 @@
+list
+```
+1 XXS
+2 CRFA
+3 Compromising Authentication
+4 Session Hijacking
+5 Permissions
+6 INFORMATION LEAK
+7 Server-Side Request Forgery(SSRF) 🚧
+```
 ## CyberSecurity :crossed_swords:
 - ### 1 Cross-site scripting (xxs)
     cross-site scripting attacks, whereby an attacker injects JavaScript into the pages of your site when users view them. Attackers usually inject malicious JavaScript into dynamic content that comes from a database, from the HTTP request, or from the URI fragment. You can defeat cross-site scripting attacks by escaping any HTML control characters in dynamic content, and by setting a content security policy that prevents the execution of inline JavaScript.
