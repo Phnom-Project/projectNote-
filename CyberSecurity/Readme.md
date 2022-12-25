@@ -114,4 +114,24 @@ the actions that each user or account can perform on that object. The canonical 
        https://insecure-website.com/loadImage?filename=..\..\..\windows\win.ini
        ```
        > 🔐 [https://portswigger.net/web-security/file-path-traversal](https://portswigger.net/web-security/file-path-traversal)
-       
+- ### 6 INFORMATION LEAKS
+    - ##### 🔐 Disable Telltale Server Headers 
+        - Make sure to disable any HTTP response headers in your web server configuration that reveal the server technology, language, and version you’re running. By default, web servers usually send a Server header back with each response, describing which software is running on the server side. This is great advertising for the web server vendor, but the browser doesn’t use it. It simply tells an attacker which vulnerabilities they can probe for. Make sure your web server configuration disables this Server header. 
+    - ##### 🔐 Use Clean URLs
+        - When you design your website, avoid telltale file suffixes in URLs, such as .php, .asp, and .jsp. Implement clean URLs instead—URLs that do not give away implementation details. URLs with file extensions are common in older web servers, which explicitly reference template filenames. Make sure to avoid such extensions.
+    - ##### 🔐 Use Generic Cookie Parameters 
+        - The name of the cookie your web server uses to store session state frequently reveals your server-side technology. For instance, Java web servers usually store the session ID under a cookie named JSESSIONID. Attackers can check these kinds of session cookie names to identify servers : 
+        ```java
+        if response.get_cookies.match(/JSESSIONID=(.*);(.*)/i)
+        jsessionid = $1
+        post_data = "j_username=#{username}&j_password=#{password}"
+        response = send_request_cgi({
+        'uri' => '/admin/j_security_check',
+        'method' => 'POST',
+        'content-type' => 'application/x-www-form-urlencoded',
+        'cookie' => "JSESSIONID=#{jsessionid}",
+        'data' => post_data,
+        })
+        ```
+        > Note that the Metasploit code checks the name of the session cookie u. Make sure that your web server sends nothing back in cookies that give clues about your technology stack. Change your configuration to use generic names for the session cookie (for example, session).
+    - ##### 🔐 Disable Client-Side Error Reporting      
