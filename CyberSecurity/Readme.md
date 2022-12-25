@@ -114,7 +114,8 @@ the actions that each user or account can perform on that object. The canonical 
        https://insecure-website.com/loadImage?filename=..\..\..\windows\win.ini
        ```
        > 🔐 [https://portswigger.net/web-security/file-path-traversal](https://portswigger.net/web-security/file-path-traversal)
-- ### 6 INFORMATION LEAKS
+- ### 6 INFORMATION LEAKS ⚠
+    You should ensure that your web server doesn’t leak information about the type of software stack you’re running on, because hackers will use this information against you when trying to figure out how to compromise your website 
     - ##### 🔐 Disable Telltale Server Headers 
         - Make sure to disable any HTTP response headers in your web server configuration that reveal the server technology, language, and version you’re running. By default, web servers usually send a Server header back with each response, describing which software is running on the server side. This is great advertising for the web server vendor, but the browser doesn’t use it. It simply tells an attacker which vulnerabilities they can probe for. Make sure your web server configuration disables this Server header. 
     - ##### 🔐 Use Clean URLs
