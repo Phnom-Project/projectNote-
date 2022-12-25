@@ -113,4 +113,5 @@ the actions that each user or account can perform on that object. The canonical 
        ```
        https://insecure-website.com/loadImage?filename=..\..\..\windows\win.ini
        ```
+       > 🔐 [https://portswigger.net/web-security/file-path-traversal](https://portswigger.net/web-security/file-path-traversal)
        
