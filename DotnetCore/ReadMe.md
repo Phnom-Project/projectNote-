@@ -1,7 +1,28 @@
+
 # Title
 ```diff
 + 3Reflection
 + 4run C# code from string
+```
+#### 7 Using Statement
+        **using statement** is used for object having implement System.IDisposable or System.IAsyncDisposable, cleanup an object.
+```cs
+//Although the StreamReader class implements the IDisposable interface, which indicates that it uses an unmanaged resource, the example doesn't explicitly call the StreamReader.Dispose method
+using System.IO;
+class UsingDeclaration
+{
+    static void Main()
+    {
+        var buffer = new char[50];
+        using StreamReader streamReader = new("file1.txt");
+        int charsRead = 0;
+        while (streamReader.Peek() != -1)
+        {
+            charsRead = streamReader.Read(buffer, 0, buffer.Length);
+            // Process characters read.
+        }
+    }
+}
 ```
 #### 6 Byte[] to base64, base64 to byte[]
 ```cs
