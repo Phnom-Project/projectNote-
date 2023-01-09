@@ -1,4 +1,4 @@
-#### Secret
+### Secret
 -  linux path
    - ~/.microsoft/usersecrets/<user_secrets_id>/secrets.json
 - window path
@@ -25,7 +25,7 @@ dotnet user-secrets set "Movies:ServiceApiKey" "12345"
 ```shell
 dotnet user-secrets set "Movies:ServiceApiKey" "12345" --project "C:\apps\WebApp1\src\WebApp1"
 ``` 
-#### Access Secret
+### Access Secret
 ```cs
 var builder = WebApplication.CreateBuilder(args);
 var movieApiKey = builder.Configuration["Movies:ServiceApiKey"];
@@ -46,3 +46,8 @@ public class IndexModel : PageModel
     }
 }
 ```
+### Set multiple secrets
+- linux
+   - cat ./input.json | dotnet user-secrets set
+- window
+   - type .\input.json | dotnet user-secrets set
