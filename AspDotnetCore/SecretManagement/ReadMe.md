@@ -48,6 +48,10 @@ public class IndexModel : PageModel
 ```
 ### Set multiple secrets
 - linux
-   - cat ./input.json | dotnet user-secrets set
+```shell
+cat ./input.json | dotnet user-secrets set
+```
 - window
-   - type .\input.json | dotnet user-secrets set
+```shell
+ type .\input.json | dotnet user-secrets set
+```
