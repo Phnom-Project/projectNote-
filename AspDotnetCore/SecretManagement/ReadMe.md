@@ -1,4 +1,8 @@
 #### Secret
+-  linux path
+   - ~/.microsoft/usersecrets/<user_secrets_id>/secrets.json
+- window path
+   - %APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json
 > dotnet user-secrets init
 ```xml
 <PropertyGroup>
