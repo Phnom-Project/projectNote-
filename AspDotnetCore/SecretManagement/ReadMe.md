@@ -3,22 +3,28 @@
    - ~/.microsoft/usersecrets/<user_secrets_id>/secrets.json
 - window path
    - %APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json
-> dotnet user-secrets init
+```shell
+dotnet user-secrets init
+```
 ```xml
 <PropertyGroup>
   <TargetFramework>netcoreapp3.1</TargetFramework>
   <UserSecretsId>79a3edd0-2092-40a2-a04d-dcb46d5ca9ed</UserSecretsId>
 </PropertyGroup>
 ```
-> dotnet user-secrets set "Movies:ServiceApiKey" "12345"
-- secret.json
+```shell
+dotnet user-secrets set "Movies:ServiceApiKey" "12345"
+```
+> secret.json
 ```json
 {
   "Movies:ServiceApiKey": "12345"
 }
 ```
 - set specific project
-> dotnet user-secrets set "Movies:ServiceApiKey" "12345" --project "C:\apps\WebApp1\src\WebApp1"
+```shell
+dotnet user-secrets set "Movies:ServiceApiKey" "12345" --project "C:\apps\WebApp1\src\WebApp1"
+``` 
 #### Access Secret
 ```cs
 var builder = WebApplication.CreateBuilder(args);
