@@ -30,10 +30,9 @@ public static string UpdateArray()
             Builders<school>.Filter.Eq(u=>u.Id, new ObjectId("63c7aa88722fd53c7cb58c76")), update,
             new UpdateOptions()
             {
-                ArrayFilters = new List<ArrayFilterDefinition<User>>()
+                ArrayFilters = new List<ArrayFilterDefinition<BsonValue>>()
                 {
-            new BsonDocument("elem.Name",
-            new BsonDocument("$eq", "45"))
+                    new BsonDocument("elem.Name",new BsonDocument("$eq", "5678"))
                 }
             });
         return "done";
