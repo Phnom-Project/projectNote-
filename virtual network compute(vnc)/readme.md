@@ -1,4 +1,4 @@
-## Debian server
+## Debian server 
 > install gui
 ```shell
 root@dlp:~# apt -y install task-mate-desktop
@@ -61,3 +61,4 @@ WebSocket server settings:
   - SSL/TLS support
   - Backgrounding (daemon)
 ```
+[https://(server's hostname or IP address):6080/vnc.html]
