@@ -1,4 +1,4 @@
-## Debian
+## Debian server
 > install gui
 ```shell
 root@dlp:~# apt -y install task-mate-desktop
