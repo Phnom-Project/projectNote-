@@ -1,3 +1,8 @@
+## create project
+```shell
+npm init
+npm run start (config in package.json)
+```
 ## Rollup js
 > format: 'iife',name: 'vayso'
 > <script type="text/javascript" src="g.js"></script>
