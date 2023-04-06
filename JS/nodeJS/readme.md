@@ -32,6 +32,8 @@ subProcess.on('close', (code) => {
   });
 ```
 ### fork
+> Messages between a parent and child process created by forkthey are accessible through Node global object called “process”. Also, with forkwe can control when a child process starts an activity or also return data from a child process to a parent process and vice versa.
+>
 > child.js
 ```js
 setTimeout(() => {
