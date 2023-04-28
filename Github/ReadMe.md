@@ -17,6 +17,12 @@ git add -A //or git add .
 git commit -m 'Added my project'
 git push -u origin main
 ```
+> V2
+```shell
+git remote add origin https://github.com/Phnom-Project/1.git
+git branch -M main
+git push -u origin main
+```
 ### auth user for rest github api
 ```shell
 curl -i -u username:$token https://api.github.com/users/octocat
