@@ -6,5 +6,7 @@ DISM /Online /Cleanup-Image /ScanHealth
 DISM /Online /Cleanup-Image /RestoreHealth
 ```
 ### wifi (missing adapter)
+```shell
 netsh winsock reset
 netcfg -d
+```
