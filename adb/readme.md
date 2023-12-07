@@ -16,8 +16,11 @@ adb shell getprop ro.product.cpu.abi
 
 # push file to android device
 adb -s emulator-5554 push frida-server /data/local/tmp
+
+# pull screenshot direct to computer
+adb -s emulator-5554 exec-out screencap -p > test.png
 ```
-### android shell
+## android shell
 ```shell
 # If running sucessfully, we can check with ps and grep
 ps | grep frida
@@ -25,7 +28,7 @@ ps | grep frida
 # change permission
 chmod +x [filename]
 ```
-### frida
+#### frida
 ```shell
 # show app identifier
 frida-ps -Uia
@@ -34,7 +37,7 @@ frida-ps -Uia
 ```shell
 objection -g com.ali.x
 ```
-### Regex
+## Regex
 ```shell
 # value between two string
 # ex : find ".json" file
