@@ -7,6 +7,13 @@
     mongorestore --host 127.0.0.1 --port 27017 ./dump
     [restore specify]
     mongorestore --host 127.0.0.1 --port 27017 --db test23  ./dump/test
+```ps1
+[backup]
+mongodump --uri="mongodb+srv://username:password@cluster.tenant.mongodb.net/[collection_name]"
+[restore]
+mongorestore --uri="mongodb+srv://username:password@cluster.tenant.mongodb.net/database" dump/
+mongorestore --uri="mongodb://localhost:27017/car24" dump/car24
+```
 #### MongoDB Title
 - 1connection
 - 2list\<object\> to json
