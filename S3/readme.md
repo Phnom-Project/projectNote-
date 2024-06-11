@@ -10,3 +10,8 @@ E:\3ytest\1DB_minio\minio.exe server E:\3ytest\1DB_minio\Data --console-address 
 # or in windows
 ./minio.exe server E:\3ytest\1DB_minio\Data --console-address ":9001"
 ```
+### s5cmd
+```ps1
+# in windows
+./s5cmd --endpoint-url=http://localhost:9000 --credentials-file ./your-credentials-file --profile default ls s3://image/
+```
