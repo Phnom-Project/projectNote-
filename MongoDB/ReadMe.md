@@ -12,7 +12,7 @@
 mongodump --uri="mongodb+srv://username:password@cluster.tenant.mongodb.net/[collection_name]"
 [restore]
 mongorestore --uri="mongodb+srv://username:password@cluster.tenant.mongodb.net/database" dump/
-mongorestore --uri="mongodb://localhost:27017/car24" dump/car24
+mongorestore --uri="mongodb://localhost:27017/<DATABASE>" dump/car24
 [To avoid sending my password in the command line history, I can do this instead:]
 mongodump --uri mongodb+srv://<USER>@clustername.ajv83.mongodb.net/<DATABASE>
 >> Enter password:
