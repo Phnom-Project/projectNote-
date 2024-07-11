@@ -7,7 +7,7 @@ npm update
 # update individual dependencies by specifying its name
 npm update [packageName]
 ```
-### handle outside click
+### Handle outside click
 ```ts
 // State
 const [isSuggestion, setIsSuggestion] = useState(false);
@@ -19,4 +19,17 @@ const handleOutsideClick = (e: MouseEvent) => {
         setIsSuggestion(false);
     }
 };
+```
+### OnSearch_KeyEnter
+```tsx
+// Function
+const onSearch_KeyEnter = <T,>(e: T) => {
+    var event = e as KeyboardEvent;
+    if (event.key === "Enter") {
+        router.push(P_Redirect_Search({ q: searchPhrase }))
+    }
+}
+// html
+...
+<Input onKeyDown={onSearch_KeyEnter}/>
 ```
