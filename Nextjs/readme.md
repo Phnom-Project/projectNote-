@@ -33,3 +33,33 @@ const onSearch_KeyEnter = <T,>(e: T) => {
 ...
 <Input onKeyDown={onSearch_KeyEnter}/>
 ```
+### Add event on custom component
+- page.tsx
+```tsx
+// function
+  const handleAdd = (label: string) => {
+    console.log("jsonAdd")
+    setJsonArr([...jsonArr, label])
+  }
+...
+<Picture_Json_Highlight key={idx} json={x.label} onClick={handleAdd} />
+```
+- component.tsx
+```tsx
+interface ButtonProps {
+    json: string;
+    onClick: (label: string) => void;
+}
+export function Picture_Json_Highlight({ json, onClick }: ButtonProps) {
+    return (
+        <div
+            className="flex flex-row items-center gap-2
+                        text-black font-bold underline underline-offset-8 decoration-cyan-600 hover:text-cyan-700 py-1 cursor-pointer"
+            onClick={() => onClick(json)}
+        >
+            <Sparkle className="h-3 w-3" />
+            {json.trim()}
+        </div>
+    )
+}
+```
