@@ -3,7 +3,7 @@
 - 2 Handle outside click
 - 3 OnSearch_KeyEnter
 - 4 Add event on custom component
-- 5 File upload
+- 5 File upload (upload and read json file)
 ```
 ### 1 Update Package.json
 ```ps1
