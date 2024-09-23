@@ -96,9 +96,16 @@ function readFile(event: ChangeEvent<HTMLInputElement>) {
     }
 };
 ....
-<Label className="text-xs" >Import</Label>
-<Upload className="w-3 h-3 ml-2" />
-<Input ref={fileRef} id="json" type="file" onChange={(e) => {
-    readFile(e)
-}} className="hidden" />
+<div className="flex flex-row items-center border rounded-md px-4 hover:bg-slate-100"
+    onClick={() => {
+        if (fileRef.current) {
+            fileRef.current.click();
+        }
+    }}>
+    <Label className="text-xs" >Import</Label>
+    <Upload className="w-3 h-3 ml-2" />
+    <Input ref={fileRef} id="json" type="file" onChange={(e) => {
+        readFile(e)
+    }} className="hidden" />
+</div>
 ```
