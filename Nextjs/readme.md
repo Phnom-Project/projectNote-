@@ -1,4 +1,10 @@
-### Update Package.json
+```
+- 1 Update Package.json
+- 2 Handle outside click
+- 3 OnSearch_KeyEnter
+- 4 Add event on custom component
+```
+### 1 Update Package.json
 ```ps1
 # compare current version to last version
 npm outdated
@@ -7,7 +13,7 @@ npm update
 # update individual dependencies by specifying its name
 npm update [packageName]
 ```
-### Handle outside click
+### 2 Handle outside click
 ```ts
 // State
 const [isSuggestion, setIsSuggestion] = useState(false);
@@ -20,7 +26,7 @@ const handleOutsideClick = (e: MouseEvent) => {
     }
 };
 ```
-### OnSearch_KeyEnter
+### 3 OnSearch_KeyEnter
 ```tsx
 // Function
 const onSearch_KeyEnter = <T,>(e: T) => {
@@ -33,7 +39,7 @@ const onSearch_KeyEnter = <T,>(e: T) => {
 ...
 <Input onKeyDown={onSearch_KeyEnter}/>
 ```
-### Add event on custom component
+### 4 Add event on custom component
 - page.tsx
 ```tsx
 // function
@@ -62,4 +68,36 @@ export function Picture_Json_Highlight({ json, onClick }: ButtonProps) {
         </div>
     )
 }
+```
+### 5 File upload
+```tsx
+import { ChangeEvent, useEffect, useRef, useState } from "react";
+...
+// ref
+const fileRef = useRef<HTMLInputElement>(null);
+// function
+function readFile(event: ChangeEvent<HTMLInputElement>) {
+    // read json from file browser 
+    const fileReader = new FileReader();
+    const { files } = event.target;
+    try {
+        if (files) {
+            fileReader.readAsText(files[0], "UTF-8");
+            fileReader.onload = e => {
+                if (e.target) {
+                    const content = e.target.result;
+                    // validate json
+                }
+            };
+        }
+    } catch (e) {
+        console.error("Error reading file");
+    }
+};
+....
+<Label className="text-xs" >Import</Label>
+<Upload className="w-3 h-3 ml-2" />
+<Input ref={fileRef} id="json" type="file" onChange={(e) => {
+    readFile(e)
+}} className="hidden" />
 ```
