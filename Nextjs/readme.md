@@ -4,6 +4,7 @@
 - 3 OnSearch_KeyEnter
 - 4 Add event on custom component
 - 5 File upload (upload and read json file)
+- 6 setTimeout in loop
 ```
 ### 1 Update Package.json
 ```ps1
@@ -108,4 +109,14 @@ function readFile(event: ChangeEvent<HTMLInputElement>) {
         readFile(e)
     }} className="hidden" />
 </div>
+```
+### 6 setTimeout in loop
+```js
+// You need to pass the variable i to setTImeout and then pass i to the anonymous callback.
+
+for(var i = 0 ; i<5 ; i++){ 
+    setTimeout((i)=>{
+        console.log(i);
+    },1000 * i, i);
+} // outputs 0,1,2,3,4 one by one.
 ```
