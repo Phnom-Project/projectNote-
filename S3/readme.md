@@ -10,7 +10,7 @@ E:\3ytest\1DB_minio\minio.exe server E:\3ytest\1DB_minio\Data --console-address 
 # or in windows
 ./minio.exe server E:\3ytest\1DB_minio\Data --console-address ":9001"
 ```
-# s5cmd (window)
+## s5cmd (window)
 > (file) your-credentials-file
 ```
 [default]
@@ -20,6 +20,14 @@ aws_secret_access_key = hEYNnc7h3PyGOy50XwZcARbHLlpX8EKdUpzMmoUb
 ```ps1
 # list
 ./s5cmd --endpoint-url=http://localhost:9000 --credentials-file ./your-credentials-file --profile default ls s3://image/
+```
+- ### aws
+  - AWS_REGION environment variable. (ex: ap-southeast-1)
+```ps1
+# verify
+$Env:aws_region
+# list
+./s5cmd --endpoint-url=https://s3.ap-southeast-1.amazonaws.com --credentials-file ./your-credentials-file --profile default ls s3://bucketname/
 ```
 ### synchronization
 ```ps1
