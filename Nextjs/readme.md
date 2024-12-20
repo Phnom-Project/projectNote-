@@ -5,6 +5,7 @@
 - 4 Add event on custom component
 - 5 File upload (upload and read json file)
 - 6 setTimeout in loop
+- 7 next-router can not refresh cookie
 ```
 ### 1 Update Package.json
 ```ps1
@@ -120,3 +121,10 @@ for(var i = 0 ; i<5 ; i++){
     },1000 * i, i);
 } // outputs 0,1,2,3,4 one by one.
 ```
+### 7 next-router can not refresh cookie
+```ts
+// next-router can not refresh cookie
+window.location.assign(window.location.origin + P_RedirectRouterEnum.HOME)
+```
+- router/navigation: if router.push() does't work properly should check middleware.ts
+- useState: don't use state-of-setState in useEffect-dependencies[], it will cause loop problem
