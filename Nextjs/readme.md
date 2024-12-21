@@ -6,6 +6,7 @@
 - 5 File upload (upload and read json file)
 - 6 setTimeout in loop
 - 7 next-router can not refresh cookie
+- 8 middleware.ts
 ```
 ### 1 Update Package.json
 ```ps1
@@ -128,3 +129,6 @@ window.location.assign(window.location.origin + P_RedirectRouterEnum.HOME)
 ```
 - router/navigation: if router.push() does't work properly should check middleware.ts
 - useState: don't use state-of-setState in useEffect-dependencies[], it will cause loop problem
+### 8 middleware.ts
+- double check : if you filter all path "/" and redirect to any path, it will disable loading cache "/_next..." (function, ui, .css, .js)
+
