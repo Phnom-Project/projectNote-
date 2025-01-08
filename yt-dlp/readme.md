@@ -35,3 +35,22 @@ ffmpeg -F url
 # ex: frame_0001.jpg, fps= frame per second
 ffmpeg -i input.mp4 -vf fps=1 frame_%04d.jpg
 ```
+#### powershell
+> sample
+```ps1
+Invoke-WebRequest -UseBasicParsing -Uri "[url]" -OutFile "[folder/file.mp4]" `
+-UserAgent "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0" `
+-Headers @{
+"Accept" = "video/webm,video/ogg,video/*;q=0.9,application/ogg;q=0.7,audio/*;q=0.6,*/*;q=0.5"
+  "Accept-Language" = "en-US,en;q=0.5"
+  "DNT" = "1"
+  "Sec-GPC" = "1"
+  "Referer" = "[referer-url]"
+  "Sec-Fetch-Dest" = "video"
+  "Sec-Fetch-Mode" = "no-cors"
+  "Sec-Fetch-Site" = "cross-site"
+  "Accept-Encoding" = "identity"
+  "Priority" = "u=4"
+}
+```
+
