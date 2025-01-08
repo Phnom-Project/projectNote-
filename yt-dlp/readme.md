@@ -17,6 +17,9 @@ url3
 
 # ensure to download high quality
 .\yt-dlp -f "bv*+ba/b" -S "vcodec:h264,res,acodec:aac" https://www.youtube.com/shorts/JbTB-gWOpFg
+
+# download audio only
+.\yt-dlp -x --audio-format mp3 [youtube-url]
 ```
 ##### ffmpeg
 ```ps1
@@ -27,4 +30,8 @@ ffprobe "file name.mp4"
 
 # list available files
 ffmpeg -F url
+
+# Extract videos frames at set intervals
+# ex: frame_0001.jpg, fps= frame per second
+ffmpeg -i input.mp4 -vf fps=1 frame_%04d.jpg
 ```
