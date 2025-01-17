@@ -18,6 +18,8 @@ url3
 # ensure to download high quality
 .\yt-dlp -f "bv*+ba/b" -S "vcodec:h264,res,acodec:aac" https://www.youtube.com/shorts/JbTB-gWOpFg
 
+.\yt-dlp -f "bv*+ba/b" -S "vcodec:h264,res,acodec:aac" --batch-file url.txt --no-overwrites
+
 # download audio only
 .\yt-dlp -x --audio-format mp3 [youtube-url]
 ```
