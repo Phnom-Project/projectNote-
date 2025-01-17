@@ -19,15 +19,12 @@ $setLocation_m3u8 = $inProcessPath + "/m3u8/";
 # - get childItem from folder
 $oldVideos = Get-ChildItem -Include @("*.mp4", "*.avi", "*.divx", "*.mov", "*.mpg", "*.wmv", "*.mkv") -Path $inProcessPath -Recurse;
 
-
 # create new folder
 New-Item -Path $setLocation_thumbnail -ItemType Directory
 New-Item -Path $setLocation_m3u8 -ItemType Directory
 
-
 # output location
 Set-Location -Path $inProcessPath;
-
 
 # CONDITION
 # - check number of files
@@ -36,12 +33,10 @@ if ($oldVideos.Length -gt 1) {
     exit
 }
 
-
 # FFMPEG
 # recursive
 foreach ($oldVideo in $oldVideos) {
     $oldVideo | Write-Host -ForegroundColor Green
-
 
     # argument
     $argExtractFrame = '-i "{0}" -vf fps=1 frame_%04d.jpg' -f $oldVideo;
@@ -49,13 +44,11 @@ foreach ($oldVideo in $oldVideos) {
     # Pause the script until user hits enter
     $null = Read-Host -Prompt 'Press enter to continue, after verifying command line arguments.';
 
-
     # Extract frame from video
     Start-Process -FilePath $ffmpegPath -ArgumentList $argExtractFrame -Wait -NoNewWindow;
     # convert mp4 to HLS
     Start-Process -FilePath $ffmpegPath -ArgumentList $arg_mp4_to_m3u8 -Wait -NoNewWindow;
 }
-
 
 # MOVE
 # - move thumbnail file
