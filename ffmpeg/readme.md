@@ -28,8 +28,8 @@ Set-Location -Path $inProcessPath;
 
 # CONDITION
 # - check number of files
-if ($oldVideos.Length -gt 1) {
-    Write-Host -ForegroundColor Yellow "Multiple videos not allowed !"
+if ($oldVideos.Count -gt 1) {
+    Write-Host -ForegroundColor Yellow "Multiple videos not allowed !" $oldVideos.Count
     exit
 }
 
