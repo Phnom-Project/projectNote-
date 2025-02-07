@@ -3,6 +3,15 @@
 ```shell
 type *.ts | ffmpeg -i pipe: -c:a copy output.mp4
 ```
+> crop and merge as one file (picture and video)
+```ps1
+# aspect 4:3
+ffmpeg -i 1.png -vf "crop=ih/3*4:ih:(iw-640)/2:(ih-360)/2" output_square.jpg
+# get resolution
+ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 3.jpg
+# merge
+ffmpeg -i 1.png -i 2.jpeg -i 3.jpeg -i 3.jpg -i 4.jpg -i 5.jpg -filter_complex "[0:v][1:v][2:v][3:v]xstack=inputs=6:layout=0_0|w0_0|w0+w1_0|0_h0|w0_h0|w0+w1_h0[v]" -map "[v]" output.jpeg
+```
 ### powershell
 - extract frame
 - convert to m3u8
