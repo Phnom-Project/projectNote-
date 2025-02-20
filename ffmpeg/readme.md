@@ -13,61 +13,21 @@ ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s
 ffmpeg -i 1.png -i 2.jpeg -i 3.jpeg -i 3.jpg -i 4.jpg -i 5.jpg -filter_complex "[0:v][1:v][2:v][3:v]xstack=inputs=6:layout=0_0|w0_0|w0+w1_0|0_h0|w0_h0|w0+w1_h0[v]" -map "[v]" output.jpeg
 ```
 ### powershell
-- extract frame
-- convert to m3u8
 ```ps1
-# ../powershell.ps1
+# GPU support
+# - CUDA
+-hwaccel cuda (for CUDA acceleration)
+-c:v h264_nvenc (for H.264 encoding with NVENC and reduce CPU performance but increase GPU performance)
+# If x or y evaluate to a negative number, they will be changed so the input image is centered on the padded area.
+-vf "pad=width=1280:height=720:x=-1:y=-1:color=black"
 
-# VARIABLES
-$ffmpegPath = "D:\softwareInsteadDriveC\FFmpeg\ffmpeg-master-latest-win64-gpl\ffmpeg-master-latest-win64-gpl\bin\ffmpeg.exe";
-# - source files
-$inProcessPath = "D:\3ytest\yt-dlp/ffmpeg/";
-# - ensure this folder exists
-$setLocation_thumbnail = $inProcessPath + "/thumb/";
-$setLocation_m3u8 = $inProcessPath + "/m3u8/";
-# - get childItem from folder
-$oldVideos = Get-ChildItem -Include @("*.mp4", "*.avi", "*.divx", "*.mov", "*.mpg", "*.wmv", "*.mkv") -Path $inProcessPath -Recurse;
-
-# create new folder
-New-Item -Path $setLocation_thumbnail -ItemType Directory
-New-Item -Path $setLocation_m3u8 -ItemType Directory
-
-# output location
-Set-Location -Path $inProcessPath;
-
-# CONDITION
-# - check number of files
-if ($oldVideos.Count -gt 1) {
-    Write-Host -ForegroundColor Yellow "Multiple videos not allowed !" $oldVideos.Count
-    exit
-}
-
-# FFMPEG
-# recursive
-foreach ($oldVideo in $oldVideos) {
-    $oldVideo | Write-Host -ForegroundColor Green
-
-    # argument
-    $argExtractFrame = '-i "{0}" -vf fps=1 frame_%04d.jpg' -f $oldVideo;
-    $arg_mp4_to_m3u8 = '-i "{0}" -codec: copy -start_number 0 -hls_time 10 -hls_list_size 0 -f hls filename.m3u8' -f $oldVideo;
-    # Pause the script until user hits enter
-    $null = Read-Host -Prompt 'Press enter to continue, after verifying command line arguments.';
-
-    # Extract frame from video
-    Start-Process -FilePath $ffmpegPath -ArgumentList $argExtractFrame -Wait -NoNewWindow;
-    # convert mp4 to HLS
-    Start-Process -FilePath $ffmpegPath -ArgumentList $arg_mp4_to_m3u8 -Wait -NoNewWindow;
-}
-
-# MOVE
-# - move thumbnail file
-$thumbnails = Get-ChildItem -Include @("*.jpg") -Path $inProcessPath -Recurse;
-foreach ($thumbnail in $thumbnails) {
-    Move-Item -Path $thumbnail -Destination $setLocation_thumbnail
-}
-# - move .m3u8 and .ts
-$thumbnails = Get-ChildItem -Include @("*.m3u8", "*.ts") -Path $inProcessPath -Recurse;
-foreach ($thumbnail in $thumbnails) {
-    Move-Item -Path $thumbnail -Destination $setLocation_m3u8
-}
+# 1280x720 : 1920x1080 : 1080x607.5 : 16x9
+# cropping  
+ffmpeg -hwaccel cuda -i input.mp4 -c:v h264_nvenc -vf "crop=(ih*9)/16:ih" output-xy2.mp4
+# padding
+ffmpeg -hwaccel cuda -i input.mp4 -c:v h264_nvenc -vf "pad=width=iw:height=2*ih:x=0:y=-1:color=black,crop=(ih*9)/16:ih" output-xy5.mp4
+# overlay png
+ffmpeg -hwaccel cuda -i output-xy5.mp4 -i mask.png -c:v h264_nvenc -filter_complex `
+"[1]scale=iw+115:-1[in2];[0][in2]overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2" `
+output5.mp4
 ```
