@@ -1,4 +1,9 @@
 ### window 
+> argument
+```ps1
+# should " " around arg prevent space-name-file
+$argBitrate = '-i "{0}" -c:v h264_nvenc  -b:v 1000k "{1}"' -f $oldVideo, $reduceBitrateName;
+```
 > multiple .ts file
 ```shell
 type *.ts | ffmpeg -i pipe: -c:a copy output.mp4
@@ -11,6 +16,11 @@ ffmpeg -i 1.png -vf "crop=ih/3*4:ih:(iw-640)/2:(ih-360)/2" output_square.jpg
 ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 3.jpg
 # merge
 ffmpeg -i 1.png -i 2.jpeg -i 3.jpeg -i 3.jpg -i 4.jpg -i 5.jpg -filter_complex "[0:v][1:v][2:v][3:v]xstack=inputs=6:layout=0_0|w0_0|w0+w1_0|0_h0|w0_h0|w0+w1_h0[v]" -map "[v]" output.jpeg
+```
+>compression
+```ps1
+# -b:v 1000k: This sets the video bitrate to 1000 Kbps
+ffmpeg -i eva.mp4 -c:v h264_nvenc  -b:v 1000k reduced_bitrate2.mp4
 ```
 ### powershell
 ```ps1
