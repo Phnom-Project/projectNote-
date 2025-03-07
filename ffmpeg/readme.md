@@ -60,6 +60,16 @@ ffmpeg -y -i main.mp4 -stream_loop -1 -i overlay.mp4 -c:v h264_nvenc -filter_com
 output02.mp4
 ```
 ### powershell
+> avoid one line string to multiple line use "@" as example below
+```
+$arg_hstack_picture = @'
+-i "{0}" -i "{1}" -i "{2}" -filter_complex
+"[0:v]{3}[left];
+[1:v]{3}[mid];
+[2:v]{3}[right];
+[left][mid][right]hstack=inputs=3" {4}
+'@
+``` 
 ```ps1
 # GPU support
 # - CUDA
