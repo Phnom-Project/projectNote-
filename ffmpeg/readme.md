@@ -75,6 +75,9 @@ $arg_hstack_picture = @'
 # - CUDA
 -hwaccel cuda (for CUDA acceleration)
 -c:v h264_nvenc (for H.264 encoding with NVENC and reduce CPU performance but increase GPU performance)
+# HSL
+-c:v h264 (fast but increase size)
+-codec: copy (use cpu but stable size from original)
 # If x or y evaluate to a negative number, they will be changed so the input image is centered on the padded area.
 -vf "pad=width=1280:height=720:x=-1:y=-1:color=black"
 
