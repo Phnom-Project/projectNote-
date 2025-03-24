@@ -16,6 +16,17 @@ file 'm 3.mp4'
 # merge mp4
 ffmpeg -f concat -safe 0 -i videoList.txt -c copy final_output2.mp4
 ```
+#### Audio
+```ps1
+# audio
+# - replace original audio
+ffmpeg -i main2.mp4 -i song.mp3 -c:v copy -map 0:v -map 1:a -shortest output_song.mp4
+# - amix : combine both audio tracks into one
+ffmpeg -i main2.mp4 -i song.mp3 -c:v copy -filter_complex " `
+[0:a] volume=0.5 [music]; `
+[music][1:a] amix=inputs=2:duration=shortest [audio_out] `
+" -map 0:v -map "[audio_out]" -y output_with_song.mp4
+```
 #### Crop
 ```ps1
 # crop and merge as one file (picture and video)
@@ -59,7 +70,33 @@ ffmpeg -y -i main.mp4 -stream_loop -1 -i overlay.mp4 -c:v h264_nvenc -filter_com
 [0:v][tmp]overlay=x=0:y=0:shortest=1" `
 output02.mp4
 ```
-### powershell
+#### Fade
+```ps1
+# fade
+# -vf "fade=t=in:st=0:d=5"  (video),
+# :c=yellow (fade-color but some player not support)
+(fix) ffmpeg -i input -filter:v "format=yuv420p" out
+# -af "afade=t=in:st=0:d=5" (audio)
+ffmpeg -i main.mp4 -c:v h264_nvenc -vf "fade=t=in:st=0:d=5" fade.mp4
+ffmpeg -i input -filter:v "format=yuv420p" out
+```
+#### Scale, Overlay
+```ps1
+# scale, overlay
+ffmpeg -i main.mp4 -i bg.jpeg -c:v h264_nvenc `
+-filter_complex "[1:v]scale=1080:1920[bg]; `
+[0:v]scale=720:-1[main]; `
+[bg][main]overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2" output.mp4
+```
+#### Timeline edit
+```ps1
+# timeline edit
+ffmpeg -i main.mp4 -c:v h264_nvenc `
+-filter_complex "smartblur=lr=5:enable='between(t,5,10)' `
+" out.mp4
+```
+
+### Powershell
 > avoid one line string to multiple line use "@" as example below
 ```
 $arg_hstack_picture = @'
