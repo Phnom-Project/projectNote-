@@ -28,7 +28,7 @@ url3
 # - audio
 ./yt-dlp -x --audio-format mp3 --batch-file url.txt --no-overwrites
 # Tiktok
-.\yt-dlp -f "bv*+ba/b" -S "vcodec:h264,res,acodec:aac" --batch-file url.txt --no-overwrites -o "%(uploader)s - %(title)s %(timestamp)s.%(ext)s"
+.\yt-dlp -f "bv*+ba/b" -S "vcodec:h264,res,acodec:aac" --batch-file url.txt --no-overwrites -o "%(uploader)s - %(title)s [%(id)s].%(ext)s"
 ```
 ##### FFmpeg
 ```ps1
