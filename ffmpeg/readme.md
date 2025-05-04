@@ -8,6 +8,11 @@ $argBitrate = '-i "{0}" -c:v h264_nvenc  -b:v 1000k "{1}"' -f $oldVideo, $reduce
 ```shell
 type *.ts | ffmpeg -i pipe: -c:a copy output.mp4
 ```
+> ffplay
+```shell
+# Preview
+ffplay -i input.mp4 -vf "delogo=x=50:y=50:w=200:h=200:show=1"
+```
 #### Append
 ```ps1
 # videoList.txt
