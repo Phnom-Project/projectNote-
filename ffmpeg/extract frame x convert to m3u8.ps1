@@ -1,9 +1,13 @@
 # ../powershell.ps1
 
+
 # VARIABLES
-$ffmpegPath = "D:\softwareInsteadDriveC\FFmpeg\ffmpeg-master-latest-win64-gpl\ffmpeg-master-latest-win64-gpl\bin\ffmpeg.exe";
+$ffmpegPath =
+"D:\softwareInsteadDriveC\FFmpeg\ffmpeg-master-latest-win64-gpl\ffmpeg-master-latest-win64-gpl\bin\ffmpeg.exe";
 # - source files
-$inProcessPath = "D:\3ytest\yt-dlp/ffmpeg/";
+$inProcessPath = "D:\MMo\Sweetatoo\website\1\Ashley Carolina\0video\5\mixed\rw"; # D:\M\4
+$inHLS_time = 5; # segment to second
+$inThumb_time = 0.5; # 0.1 : 10s, 0.5 : 5s (0.1fps 10second take 1frame)
 # - ensure this folder exists
 $setLocation_thumbnail = $inProcessPath + "/thumb/";
 $setLocation_m3u8 = $inProcessPath + "/m3u8/";
@@ -28,13 +32,11 @@ if ($oldVideos.Count -gt 1) {
 # recursive
 foreach ($oldVideo in $oldVideos) {
     $oldVideo | Write-Host -ForegroundColor Green
-
     # argument
-    $argExtractFrame = '-i "{0}" -vf fps=1 frame_%04d.jpg' -f $oldVideo;
-    $arg_mp4_to_m3u8 = '-i "{0}" -codec: copy -start_number 0 -hls_time 10 -hls_list_size 0 -f hls filename.m3u8' -f $oldVideo;
+    $argExtractFrame = '-i "{0}" -vf fps={1} frame_%04d.jpg' -f $oldVideo,$inThumb_time;
+    $arg_mp4_to_m3u8 = '-hwaccel cuda -i "{0}" -codec: copy -start_number 0 -hls_time {1} -hls_list_size 0 -f hls filename.m3u8' -f $oldVideo, $inHLS_time;
     # Pause the script until user hits enter
     $null = Read-Host -Prompt 'Press enter to continue, after verifying command line arguments.';
-
     # Extract frame from video
     Start-Process -FilePath $ffmpegPath -ArgumentList $argExtractFrame -Wait -NoNewWindow;
     # convert mp4 to HLS
