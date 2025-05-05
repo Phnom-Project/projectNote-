@@ -106,7 +106,7 @@ ffmpeg -i main.mp4 -c:v h264_nvenc `
 ### Powershell
 > Get childItem without -Recurse to prevent access to subfolder
 ```ps1
-$inProcessPath = "D:\5ws\item\website\azmol\car photo - webp\"; # ex: D:\3ytest\ffmpeg\editor\test\
+$inProcessPath = "D:\item\website\car photo - webp\"; # ex: D:\3ytest\ffmpeg\editor\test\
 $originals = Get-ChildItem -Include @($inExtension) `
     -Path $inProcessPath"*";
 ```
