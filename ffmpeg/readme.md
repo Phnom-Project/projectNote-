@@ -87,6 +87,8 @@ ffmpeg -i input -filter:v "format=yuv420p" out
 ```
 #### Scale, Overlay
 ```ps1
+# [main_w, W], [main_h, H] : The main input width and height.
+# [overlay_w, w], [overlay_h, h] : The overlay input width and height. 
 # scale, overlay
 ffmpeg -i main.mp4 -i bg.jpeg -c:v h264_nvenc `
 -filter_complex "[1:v]scale=1080:1920[bg]; `
@@ -102,6 +104,12 @@ ffmpeg -i main.mp4 -c:v h264_nvenc `
 ```
 
 ### Powershell
+> Get childItem without -Recurse to prevent access to subfolder
+```ps1
+$inProcessPath = "D:\5ws\item\website\azmol\car photo - webp\"; # ex: D:\3ytest\ffmpeg\editor\test\
+$originals = Get-ChildItem -Include @($inExtension) `
+    -Path $inProcessPath"*";
+```
 > avoid one line string to multiple line use "@" as example below
 ```
 $arg_hstack_picture = @'
