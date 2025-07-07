@@ -1,4 +1,7 @@
-### Backup & Restore
+#### Mongodb (cloud service)
+- permission
+    - readWrite-built-in role : can drop collection, should use custom-role with read-built-in role
+#### Backup & Restore
     [backup all]
     mongodump --host 127.0.0.1:27017 
     [backup specific]
