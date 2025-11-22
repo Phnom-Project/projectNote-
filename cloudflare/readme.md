@@ -1,5 +1,5 @@
 ## 1. Wrangler
-```
+```md
 # install
 npm i -D wrangler@latest
 # list scope
