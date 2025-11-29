@@ -17,3 +17,10 @@ npx wrangler logout
 npm run preview # test api in local
 npm run deploy
 ```
+## 2. R2
+- #### 1 - bucket lock policy
+```md
+Prevents objects in a Cloudflare R2 storage bucket from being deleted or overwritten for a specified period or indefinitely
+- Prefix : Leave the Prefix field blank or empty to apply the rule to all objects in the bucket.
+- Retention period : specific duration, until a certain date, or indefinitely
+```
