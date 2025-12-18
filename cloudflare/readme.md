@@ -19,6 +19,7 @@ npm run deploy
 ```
 ## 2. R2
 - #### 1 - bucket lock policy
+  - can protect delete and overwrite object in cloudflare r2 web-ui.
 ```md
 Prevents objects in a Cloudflare R2 storage bucket from being deleted or overwritten for a specified period or indefinitely
 - Prefix : Leave the Prefix field blank or empty to apply the rule to all objects in the bucket.
