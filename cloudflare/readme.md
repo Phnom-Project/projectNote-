@@ -18,6 +18,28 @@ npm run preview # test api in local
 npm run deploy
 ```
 ## 2. R2
+- #### 2 - CORS Policy
+- work with vercel [https://github.com/Phnom-Project/projectNote-/blob/main/vercel/readme.md#1-header]
+```
+[
+  {
+    "AllowedOrigins": [
+      "*"
+    ],
+    "AllowedMethods": [
+      "GET",
+      "PUT",
+      "POST"
+    ],
+    "AllowedHeaders": [
+      "*"
+    ],
+    "ExposeHeaders": [
+      "*"
+    ]
+  }
+]
+```
 - #### 1 - bucket lock policy
   - can protect delete and overwrite object in cloudflare r2 web-ui.
 ```md
