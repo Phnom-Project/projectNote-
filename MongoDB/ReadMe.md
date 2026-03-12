@@ -1,7 +1,22 @@
 #### Mongodb (cloud service)
 - permission
     - readWrite-built-in role : can drop collection, should use custom-role (Collection Action) with read-built-in role (Database Action and Role) in custom-role.
-- createSearchIndex
+```ps1
+# Collection Action
+# > Query and Write Actions
+find@database
+insert@database
+remove@database
+update@database
+bypassDocumentValidation@database
+# > DB Management Actions
+createCollection@database
+createIndex@database
+
+# Built-in Role
+read@thelube
+```
+- createSearchIndex (if need access from api-server)
     - add readWrite-builtIn-role in custom-roles, it have all most permission
 #### Backup & Restore
     [backup all]
