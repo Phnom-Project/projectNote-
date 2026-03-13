@@ -43,6 +43,7 @@ npm run deploy
 - #### 1 - bucket lock policy
   - can protect delete and overwrite object in cloudflare r2 web-ui.
 ```md
+# after-date-can overwrite or delete : 1 day(s)
 Prevents objects in a Cloudflare R2 storage bucket from being deleted or overwritten for a specified period or indefinitely
 - Prefix : Leave the Prefix field blank or empty to apply the rule to all objects in the bucket.
 - Retention period : specific duration, until a certain date, or indefinitely
