@@ -18,6 +18,20 @@ npm run preview # test api in local
 npm run deploy
 ```
 ## 2. R2
+- #### 3 - Backup & Restore
+> (work on window-powershell)
+```ps1
+# s3-credentials-file
+[default]
+aws_access_key_id = 31..f
+aws_secret_access_key = 8f...a
+
+# Backup (sync): "*" must at the end of source and "/" for destination path
+$env:AWS_REGION = "auto"; ./s5cmd --endpoint-url https://<ID>.r2.cloudflarestorage.com --credentials-file ./s3-credentials-file --profile default sync s3://test/profile/* ./test/s3/
+
+# Restore (sync): "/" must at the end of both source and destination path
+$env:AWS_REGION = "auto"; ./s5cmd --endpoint-url https://<ID>.r2.cloudflarestorage.com --credentials-file ./s3-credentials-file --profile default sync ./test/s3/ s3://test/profile/
+```
 - #### 2 - CORS Policy
 - work with vercel [https://github.com/Phnom-Project/projectNote-/blob/main/vercel/readme.md#1-header]
 ```
