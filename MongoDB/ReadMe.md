@@ -19,6 +19,7 @@ read@thelube # Atlas Search required
 - createSearchIndex (if need access from api-server)
     - add readWrite-builtIn-role in custom-roles, it have all most permission
 ### 1. Backup & Restore
+> (Maybe work on new Database, because Existed Database it cost compute to deduplicate key)
 ```ps1
 # To avoid be visible to system status programs such as `ps` that may be invoked by other users, Enter password manually
 # Backup
