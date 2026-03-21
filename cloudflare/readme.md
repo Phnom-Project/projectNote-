@@ -42,8 +42,7 @@ $env:AWS_REGION = "auto"; ./s5cmd --endpoint-url https://<ID>.r2.cloudflarestora
     ],
     "AllowedMethods": [
       "GET",
-      "PUT",
-      "POST"
+      "PUT"
     ],
     "AllowedHeaders": [
       "*"
