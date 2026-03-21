@@ -1,5 +1,6 @@
 ### 2. Mongodb (cloud service)
 #### 2. atlas search index
+> Index Name: **default**
 ```
 {
   "mappings": {
