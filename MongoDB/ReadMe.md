@@ -1,4 +1,34 @@
 ### 2. Mongodb (cloud service)
+#### 2. atlas search index
+```
+{
+  "mappings": {
+    "dynamic": false,
+    "fields": {
+      "_id": {
+        "type": "objectId"
+      },
+      "description": {
+        "analyzer": "lucene.standard",
+        "type": "string"
+      },
+      "jsonTag": {
+        "normalizer": "lowercase",
+        "type": "token"
+      },
+      "jsonTagStr": {
+        "analyzer": "lucene.standard",
+        "type": "string"
+      },
+      "title": {
+        "analyzer": "lucene.standard",
+        "type": "string"
+      }
+    }
+  }
+}
+```
+#### 1. authorization
 - permission
     - **readWrite-built-in role** : can drop collection, should use custom-role (Collection Action) with **read-built-in role** (Database Action and Role) in custom-role.
 ```ps1
